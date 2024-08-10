@@ -3,37 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgeLapse</title>
+    <title>AgeLapse - Download</title>
     <style>
         body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            flex-direction: column;
+            min-height: 100vh;
             margin: 0;
-            font-family: Arial, sans-serif;
+        }
+        .logo {
+            margin-top: 20px;
+        }
+        .container {
             text-align: center;
+            padding: 20px;
         }
         h1 {
+            font-size: 2.5em;
             margin-bottom: 20px;
         }
-        a {
-            display: block;
-            margin: 10px 0;
-            text-decoration: none;
-            color: #007BFF;
+        p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            color: #bbbbbb;
         }
-        a:hover {
-            text-decoration: underline;
+        .download-section {
+            margin-bottom: 40px;
+        }
+        .download-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        .download-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .download-link {
+            background-color: #1e1e1e;
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #ffffff;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 200px;
+        }
+        .download-link:hover {
+            background-color: #333333;
+        }
+        .platform-icon {
+            margin-right: 8px;
         }
     </style>
 </head>
 <body>
-    <div>
-        <h1>AgeLapse</h1>
-        <a href="download.html">Download</a>
-        <a href="privacy_policy.html">Privacy policy</a>
-        <a href="support.html">Get support</a>
+    <div class="container">
+        <img src="https://i.imgur.com/CmsixvW.png" alt="AgeLapse Logo" class="logo" width="200">
+        <h1>Download AgeLapse</h1>
+        <p>Easily create stabilized "photo-a-day" projects with AgeLapse.<br><br>100% free and open source.</p>
+
+        <div class="download-section">
+            <h2>Mobile</h2>
+            <div class="download-links">
+                <a href="#" class="download-link">
+                    <img src="https://img.icons8.com/ios-glyphs/30/ffffff/android-os.png" class="platform-icon" alt="Android Icon">
+                    Download for Android
+                </a>
+                <a href="#" class="download-link">
+                    <img src="https://img.icons8.com/ios-glyphs/30/ffffff/mac-os.png" class="platform-icon" alt="iOS Icon">
+                    Download for iOS
+                </a>
+            </div>
+        </div>
+
+        <div class="download-section">
+            <h2>Desktop</h2>
+            <div class="download-links">
+                <a href="#" class="download-link">
+                    <img src="https://img.icons8.com/ios-glyphs/30/ffffff/windows-10.png" class="platform-icon" alt="Windows Icon">
+                    Download for Windows
+                </a>
+                <a href="#" class="download-link">
+                    <img src="https://img.icons8.com/ios-glyphs/30/ffffff/mac-client.png" class="platform-icon" alt="MacOS Icon">
+                    Download for MacOS
+                </a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
