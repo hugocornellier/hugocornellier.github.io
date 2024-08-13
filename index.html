@@ -87,6 +87,12 @@
             color: #ffffff;
         }
     </style>
+    <script>
+        // JavaScript to redirect from HTTP to HTTPS
+        if (window.location.protocol !== 'https:') {
+            window.location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+        }
+    </script>
 </head>
 <body>
     <div class="content">
