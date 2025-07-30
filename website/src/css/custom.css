@@ -50,10 +50,10 @@
 }
 
 :root {
-  --ifm-footer-background-color: #090909;
+  --ifm-footer-background-color: #0e0d0d;
 }
 
 footer {
-  background: #090909;
+  background: #0e0d0d;
   font-size: 14px;
 }
