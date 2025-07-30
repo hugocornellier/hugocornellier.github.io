@@ -29,6 +29,16 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+.al-download-page{
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;   /* header + main + footer = 100 vh */
+}
+
+.al-download-page > main{
+  flex:1 0 auto;      /* main expands, footer drops to bottom */
+}
+
 .al-download-page,
 .al-download-page .main-wrapper {
   background: #121212;

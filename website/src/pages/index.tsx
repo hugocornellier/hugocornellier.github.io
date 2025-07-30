@@ -29,7 +29,6 @@ export default function Home(): JSX.Element {
 
     const [showDownloads, setShowDownloads] = useState(false)
 
-    // Inline SVG Icons (replacing Lucide React)
     const DownloadIcon = ({ style }: { style?: React.CSSProperties }) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +103,6 @@ export default function Home(): JSX.Element {
         </svg>
     )
 
-    // Define styles for hover effects using state
     const [downloadBtnHover, setDownloadBtnHover] = useState(false)
     const [docBtnHover, setDocBtnHover] = useState(false)
     const [mobileBtnHover1, setMobileBtnHover1] = useState(false)
@@ -119,7 +117,7 @@ export default function Home(): JSX.Element {
                 style={{
                     backgroundColor: '#18181b', // bg-zinc-900
                     color: '#ffffff', // text-white
-                    minHeight: '100vh',
+                    flex: 1,
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
@@ -127,7 +125,6 @@ export default function Home(): JSX.Element {
                     padding: '24px', // p-6
                 }}
             >
-                {/* Embedded Styles for Animations and Media Queries */}
                 <style>{`
           @keyframes fade-in-slide-from-top {
             from {
@@ -163,7 +160,6 @@ export default function Home(): JSX.Element {
                         gap: '48px',
                     }}
                 >
-                    {/* Logo and Header */}
                     <div
                         style={{
                             display: 'flex',
@@ -208,13 +204,12 @@ export default function Home(): JSX.Element {
                                         display: 'block',
                                     }}
                                 >
-                  100% free and open source. Forever.
-                </span>
+                                  100% free and open source. Forever.
+                                </span>
                             </p>
                         </div>
                     </div>
 
-                    {/* Main Action Buttons */}
                     <div
                         style={{
                             display: 'flex',
@@ -261,7 +256,7 @@ export default function Home(): JSX.Element {
                         </button>
 
                         <Link
-                            href="https://www.google.com"
+                            href="/info/docs"
                             target="_blank"
                             rel="noopener noreferrer"
                             onMouseEnter={() => setDocBtnHover(true)}
@@ -295,7 +290,6 @@ export default function Home(): JSX.Element {
                         </Link>
                     </div>
 
-                    {/* Conditional Download Sections */}
                     {showDownloads && (
                         <div
                             className="animate-fade-in-slide"
@@ -306,7 +300,6 @@ export default function Home(): JSX.Element {
                                 marginTop: '48px',
                             }}
                         >
-                            {/* Mobile Section */}
                             <div
                                 style={{
                                     borderRadius: '12px',
@@ -420,7 +413,6 @@ export default function Home(): JSX.Element {
                                 </div>
                             </div>
 
-                            {/* Desktop Section */}
                             <div
                                 style={{
                                     borderRadius: '12px',
@@ -551,7 +543,6 @@ export default function Home(): JSX.Element {
                                             </Link>
                                         </div>
 
-                                        {/* Windows */}
                                         <div style={{ display: 'flex', alignItems: 'center' }}>
                                             <Link
                                                 href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-windows/AgeLapse-0.4.0.exe"
