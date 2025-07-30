@@ -20,7 +20,7 @@ const config: Config = {
   organizationName: 'hugocornellier',
   projectName: 'hugocornellier.github.io',
 
-
+  trailingSlash: true,
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
 
