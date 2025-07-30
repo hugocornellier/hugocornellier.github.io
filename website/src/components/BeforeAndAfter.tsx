@@ -71,7 +71,7 @@ export default function Component() {
                                         playsInline
                                         className="video"
                                     >
-                                        <source src="../../public/videos/raw_15fps.mp4" type="video/mp4" />
+                                        <source src="https://github.com/hugocornellier/hugocornellier.github.io/raw/refs/heads/main/website/public/videos/raw_15fps.mp4" type="video/mp4" />
                                     </video>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@ export default function Component() {
                                         playsInline
                                         className="video"
                                     >
-                                        <source src="../../public/videos/stab_15fps.mp4" type="video/mp4" />
+                                        <source src="https://github.com/hugocornellier/hugocornellier.github.io/raw/refs/heads/main/website/public/videos/stab_15fps.mp4" type="video/mp4" />
                                     </video>
                                 </div>
                             </div>
