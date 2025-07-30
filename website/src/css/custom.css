@@ -29,14 +29,19 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-.al-download-page{
+#__docusaurus{
   display:flex;
   flex-direction:column;
-  min-height:100vh;   /* header + main + footer = 100 vh */
+  min-height:100vh;   /* header + main + footer = viewport */
+}
+.main-wrapper{
+  flex:1 0 auto;      /* lets the page body stretch */
 }
 
-.al-download-page > main{
-  flex:1 0 auto;      /* main expands, footer drops to bottom */
+/* keep your dark background */
+.al-download-page,
+.al-download-page .main-wrapper{
+  background:#121212;
 }
 
 .al-download-page,
