@@ -77,6 +77,10 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
+              label: 'Download',
+              to: '/',
+            },
+            {
               label: 'Documentation',
               to: 'docs/intro',
             },
@@ -86,16 +90,8 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
               label: 'Discord',
               href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
             },
           ],
         },
@@ -103,8 +99,8 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'Source Code - GitHub',
+              href: 'https://github.com/agelapse',
             },
           ],
         },
