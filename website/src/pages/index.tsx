@@ -256,7 +256,7 @@ export default function Home(): JSX.Element {
                         </button>
 
                         <Link
-                            href="/info/docs"
+                            href="/info/docs/intro"
                             target="_blank"
                             rel="noopener noreferrer"
                             onMouseEnter={() => setDocBtnHover(true)}
