@@ -27,7 +27,6 @@ export default function Home(): JSX.Element {
         }
     }, []);
 
-
     const [showDownloads, setShowDownloads] = useState(false)
 
     // Inline SVG Icons (replacing Lucide React)
@@ -154,7 +153,6 @@ export default function Home(): JSX.Element {
           }
         }
       `}</style>
-
                 <div
                     style={{
                         maxWidth: "960px", // max-w-4xl
