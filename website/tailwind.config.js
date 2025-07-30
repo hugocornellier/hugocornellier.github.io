@@ -5,6 +5,7 @@ module.exports = {
         "./docs/**/*.{md,mdx}",
         "./blog/**/*.{md,mdx}",
     ],
+    corePlugins: { preflight: false },
     theme: {
         extend: {},
     },

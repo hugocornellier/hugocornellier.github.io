@@ -48,7 +48,10 @@ const config: Config = {
         },
         theme: {
           // 🔑 point at your Tailwind entry file here
-          customCss: require.resolve('./src/css/tailwind.css'),
+          customCss: [
+            require.resolve('./src/css/tailwind.css'),
+            require.resolve('./src/css/custom.css'),
+          ],
         },
       } satisfies Preset.Options,
     ],

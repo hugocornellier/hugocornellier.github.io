@@ -21,11 +21,16 @@ const linkStyle: React.CSSProperties = {
 
 export default function Home(): JSX.Element {
     useEffect(() => {
-        if (typeof window !== 'undefined' && window.location.protocol !== 'https:') {
+        // only enforce HTTPS on real domains, not on localhost HTTP
+        if (
+            typeof window !== 'undefined' &&
+            window.location.protocol === 'http:' &&
+            window.location.hostname !== 'localhost'
+        ) {
             window.location.href =
-                'https:' + window.location.href.substring(window.location.protocol.length)
+                'https:' + window.location.href.substring(window.location.protocol.length);
         }
-    }, [])
+    }, []);
 
     const [showDownloads, setShowDownloads] = useState(false)
 
