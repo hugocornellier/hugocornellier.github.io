@@ -217,7 +217,7 @@ export default function Home(): JSX.Element {
                                         display: "block",
                                     }}
                                 >
-                100% free and open source.
+                100% free and open source. Forever.
               </span>
                             </p>
                         </div>
