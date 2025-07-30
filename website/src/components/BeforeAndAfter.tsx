@@ -1,3 +1,4 @@
+/* Component.tsx */
 "use client"
 
 import { ArrowDown, Sparkles } from "lucide-react"
@@ -9,7 +10,7 @@ export default function Component() {
 
     useEffect(() => {
         const before = beforeRef.current
-        const after = afterRef.current
+        const after  = afterRef.current
         if (!before || !after) return
 
         let ready = 0
@@ -17,7 +18,7 @@ export default function Component() {
 
         const start = () => {
             before.currentTime = 0
-            after.currentTime = 0
+            after.currentTime  = 0
             void before.play()
             void after.play()
 
@@ -42,81 +43,262 @@ export default function Component() {
     }, [])
 
     return (
-        <div className="bg-gradient-to-br from-slate-900 to-slate-900 flex items-center justify-center p-8 relative overflow-hidden">
-            <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-                <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-orange-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse animation-delay-4000"></div>
-            </div>
+        <>
+            <div className="outer-container">
+                {/* blurred background blobs */}
+                <div className="blur-circle blur-1" />
+                <div className="blur-circle blur-2" />
+                <div className="blur-circle blur-3" />
 
-            <div className="max-w-4xl w-full relative z-10">
-                <div className="max-w-6xl w-full border border-white/20 rounded-3xl bg-black/40 backdrop-blur-xl p-8 shadow-2xl flex flex-col items-center relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-3xl"></div>
+                <div className="inner-wrapper">
+                    <div className="card">
+                        <div className="shine-overlay" />
 
-                    <div className="group mb-12 w-full md:w-3/4 relative z-10">
-                        <div className="mb-6 text-center">
-              <span className="inline-block bg-gradient-to-r from-slate-600 to-slate-500 text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg backdrop-blur-sm border border-white/20">
-                <Sparkles className="w-4 h-4 inline mr-2" />
-                BEFORE
-              </span>
-                        </div>
-                        <div className="relative">
-                            <div className="relative bg-black rounded-2xl border border-slate-300/30 overflow-hidden h-80 shadow-2xl flex items-center justify-center backdrop-blur-sm transform group-hover:scale-[1.02] transition-all duration-500">
-                                <video
-                                    ref={beforeRef}
-                                    autoPlay
-                                    loop
-                                    muted
-                                    playsInline
-                                    className="w-5/6 h-5/6 object-contain filter group-hover:brightness-110 transition-all duration-500"
-                                >
-                                    <source src="../../public/videos/raw_15fps.mp4" type="video/mp4" />
-                                </video>
+                        {/* BEFORE */}
+                        <div className="section group">
+                            <div className="badge">
+                                <Sparkles className="icon" />
+                                BEFORE
+                            </div>
+
+                            <div className="video-container">
+                                <div className="video-frame">
+                                    <video
+                                        ref={beforeRef}
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        className="video"
+                                    >
+                                        <source src="../../public/videos/raw_15fps.mp4" type="video/mp4" />
+                                    </video>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div className="text-center mb-12 relative z-10">
-                        <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent mb-6 drop-shadow-lg">
-                            Easily turn this...
-                        </h1>
-                        <div className="flex items-center justify-center gap-6 mb-6">
-                            <div className="h-px bg-gradient-to-r from-transparent via-white/40 to-transparent flex-1 max-w-32"></div>
-                            <div className="relative">
-                                <div className="absolute inset-0 bg-purple-500 rounded-full blur-md opacity-50 animate-pulse"></div>
-                                <ArrowDown className="w-10 h-10 text-white relative z-10 drop-shadow-lg" />
-                            </div>
-                            <div className="h-px bg-gradient-to-r from-transparent via-white/40 to-transparent flex-1 max-w-32"></div>
-                        </div>
-                        <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent drop-shadow-lg">
-                            into this!
-                        </h2>
-                    </div>
+                        {/* arrows / heading */}
+                        <div className="arrows">
+                            <h1 className="gradient-text-1">
+                                Easily turn this...
+                            </h1>
 
-                    <div className="group w-full md:w-3/4 relative z-10">
-                        <div className="relative">
-                            <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl border border-slate-300/30 overflow-hidden h-80 shadow-2xl transform group-hover:scale-[1.02] transition-all duration-500">
-                                <video
-                                    ref={afterRef}
-                                    autoPlay
-                                    loop
-                                    muted
-                                    playsInline
-                                    className="w-full h-full object-cover filter group-hover:brightness-110 transition-all duration-500"
-                                >
-                                    <source src="../../public/videos/stab_15fps.mp4" type="video/mp4" />
-                                </video>
+                            <div className="arrow-row">
+                                <div className="line" />
+                                <div className="arrow-icon">
+                                    <ArrowDown className="arrow" />
+                                </div>
+                                <div className="line" />
                             </div>
+
+                            <h2 className="gradient-text-2">
+                                ...into this!
+                            </h2>
                         </div>
-                        <div className="mt-6 text-center">
-              <span className="inline-block bg-gradient-to-r from-slate-600 to-slate-500 text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg backdrop-blur-sm border border-white/20">
-                <Sparkles className="w-4 h-4 inline mr-2" />
-                AFTER1
-              </span>
+
+                        {/* AFTER */}
+                        <div className="section group">
+                            <div className="video-container">
+                                <div className="video-frame after">
+                                    <video
+                                        ref={afterRef}
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        className="video"
+                                    >
+                                        <source src="../../public/videos/stab_15fps.mp4" type="video/mp4" />
+                                    </video>
+                                </div>
+                            </div>
+
+                            <div className="badge after-badge">
+                                <Sparkles className="icon" />
+                                AFTER
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+            {/* RAW CSS  (no Tailwind) */}
+            <style>{`
+        /* layout */
+        .outer-container {
+          min-height: 100vh;
+          background: #0f172a;
+          background: linear-gradient(135deg, #0f172a 0%, #0f172a 100%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 2rem;
+          position: relative;
+          overflow: hidden;
+        }
+        .inner-wrapper {
+          width: 100%;
+          max-width: 64rem;
+          position: relative;
+          z-index: 10;
+        }
+        .card {
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 1.5rem;
+          background: rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(10px);
+          padding: 2rem;
+          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .shine-overlay {
+          position: absolute;
+          inset: 0;
+          border-radius: 1.5rem;
+          background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+          pointer-events: none;
+        }
+
+        /* blurred decorative circles */
+        .blur-circle {
+          position: absolute;
+          border-radius: 50%;
+          mix-blend-mode: multiply;
+          filter: blur(80px);
+          opacity: 0.2;
+          animation: pulse 6s ease-in-out infinite;
+        }
+        .blur-1 {
+          top: -10rem;
+          right: -10rem;
+          width: 20rem;
+          height: 20rem;
+          background: #a855f7;
+        }
+        .blur-2 {
+          bottom: -10rem;
+          left: -10rem;
+          width: 20rem;
+          height: 20rem;
+          background: #3b82f6;
+          animation-delay: 2s;
+        }
+        .blur-3 {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 24rem;
+          height: 24rem;
+          background: #f97316;
+          opacity: 0.1;
+          animation-delay: 4s;
+        }
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); }
+          50%       { transform: scale(1.05); }
+        }
+
+        /* BEFORE & AFTER sections */
+        .section {
+          width: 100%;
+          max-width: 75%;
+          margin: 0 auto 3rem;
+          text-align: center;
+          position: relative;
+        }
+        .badge {
+          display: inline-block;
+          padding: 0.75rem 1.5rem;
+          border-radius: 9999px;
+          font-size: 0.875rem;
+          font-weight: 700;
+          background: linear-gradient(90deg, #475569, #64748b);
+          color: #ffffff;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          backdrop-filter: blur(4px);
+          margin-bottom: 1.5rem;
+        }
+        .after-badge { margin-top: 1.5rem; }
+        .icon { width: 1rem; height: 1rem; margin-right: 0.5rem; vertical-align: text-bottom; }
+
+        /* video frames */
+        .video-container { position: relative; }
+        .video-frame {
+          height: 20rem;
+          border-radius: 1rem;
+          border: 1px solid rgba(203, 213, 225, 0.3);
+          overflow: hidden;
+          background: #000;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9);
+          transition: transform 0.5s, filter 0.5s;
+        }
+        .group:hover .video-frame { transform: scale(1.02); }
+        .video { width: 83.333%; height: 83.333%; object-fit: contain; transition: filter 0.5s; }
+        .group:hover .video { filter: brightness(1.1); }
+        .after .video { width: 100%; height: 100%; object-fit: cover; }
+
+        /* headline & arrow block */
+        .arrows { text-align: center; margin-bottom: 3rem; }
+        .gradient-text-1,
+        .gradient-text-2 {
+          font-weight: 700;
+          font-size: clamp(2.5rem, 6vw, 3.75rem);
+          margin-bottom: 1.5rem;
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+        }
+        .gradient-text-1 { background: linear-gradient(90deg, #ffffff, #e9d5ff, #ffffff); }
+        .gradient-text-2 { background: linear-gradient(90deg, #ffffff, #bae6fd, #ffffff); }
+
+        .arrow-row {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1.5rem;
+          margin-bottom: 1.5rem;
+        }
+        .line {
+          flex: 1;
+          max-width: 8rem;
+          height: 1px;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        }
+        .arrow-icon { position: relative; }
+        .arrow-icon::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 9999px;
+          background: #a855f7;
+          filter: blur(8px);
+          opacity: 0.5;
+          animation: pulse 4s ease-in-out infinite;
+        }
+        .arrow {
+          position: relative;
+          width: 2.5rem;
+          height: 2.5rem;
+          color: #ffffff;
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+        }
+
+        /* responsive tweaks */
+        @media (max-width: 768px) {
+          .section { max-width: 100%; }
+          .gradient-text-1,
+          .gradient-text-2 { font-size: 2.25rem; }
+        }
+      `}</style>
+        </>
     )
 }
