@@ -59,7 +59,7 @@ const config: Config = {
       title: 'AgeLapse',
       logo: {
         alt: 'AgeLapse Logo',
-        src: 'img/logo.svg',
+        src: 'img/docusaurus.png',
       },
       items: [
         {
