@@ -1,4 +1,7 @@
-import React, {JSX, useEffect, useState } from 'react';
+'use client'
+
+import type { JSX } from 'react'
+import React, { useEffect, useState } from 'react'
 import Layout from '@theme/Layout';
 import Image from "next/image"
 import Link from "next/link"
