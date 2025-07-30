@@ -16,7 +16,7 @@ const config: Config = {
 
   // Set the production url of your site here
   url: 'https://agelapse.com',
-  baseUrl: '/docs/',
+  baseUrl: '/info/',
   organizationName: 'hugocornellier',
   projectName: 'hugocornellier.github.io',
 
