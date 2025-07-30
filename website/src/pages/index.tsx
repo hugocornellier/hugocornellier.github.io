@@ -175,8 +175,6 @@ export default function Home(): JSX.Element {
                             <img
                                 src="https://i.imgur.com/CmsixvW.png"
                                 alt="AgeLapse Logo"
-                                width={200}
-                                height={200}
                                 style={{
                                     filter:
                                         'drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))',
@@ -190,17 +188,6 @@ export default function Home(): JSX.Element {
                                 gap: '16px',
                             }}
                         >
-                            <h1
-                                style={{
-                                    fontSize: '2.5rem',
-                                    fontWeight: 700,
-                                    background: 'linear-gradient(to right, #ffffff, #d4d4d8)',
-                                    WebkitBackgroundClip: 'text',
-                                    WebkitTextFillColor: 'transparent',
-                                }}
-                            >
-                                Download AgeLapse
-                            </h1>
                             <p
                                 style={{
                                     fontSize: '1.25rem',
