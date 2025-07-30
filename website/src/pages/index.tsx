@@ -28,7 +28,7 @@ export default function Home(): JSX.Element {
     const [showDownloads, setShowDownloads] = useState(false)
 
     // Inline SVG Icons (replacing Lucide React)
-    const DownloadIcon = ({ className }: { className?: string }) => (
+    const DownloadIcon = ({ style }: { style?: React.CSSProperties }) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -39,7 +39,7 @@ export default function Home(): JSX.Element {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className={className}
+            style={style}
         >
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
             <polyline points="7 10 12 15 17 10" />
@@ -47,7 +47,7 @@ export default function Home(): JSX.Element {
         </svg>
     )
 
-    const BookOpenIcon = ({ className }: { className?: string }) => (
+    const BookOpenIcon = ({ style }: { style?: React.CSSProperties }) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -58,14 +58,14 @@ export default function Home(): JSX.Element {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className={className}
+            style={style}
         >
             <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
             <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
         </svg>
     )
 
-    const SmartphoneIcon = ({ className }: { className?: string }) => (
+    const SmartphoneIcon = ({ style }: { style?: React.CSSProperties }) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -76,14 +76,14 @@ export default function Home(): JSX.Element {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className={className}
+            style={style}
         >
             <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
             <path d="M12 18h.01" />
         </svg>
     )
 
-    const MonitorIcon = ({ className }: { className?: string }) => (
+    const MonitorIcon = ({ style }: { style?: React.CSSProperties }) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -94,7 +94,7 @@ export default function Home(): JSX.Element {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className={className}
+            style={style}
         >
             <rect width="20" height="14" x="2" y="3" rx="2" />
             <path d="M12 17v4" />
@@ -102,87 +102,320 @@ export default function Home(): JSX.Element {
         </svg>
     )
 
+    // Define styles for hover effects using state
+    const [downloadBtnHover, setDownloadBtnHover] = useState(false)
+    const [docBtnHover, setDocBtnHover] = useState(false)
+    const [mobileBtnHover1, setMobileBtnHover1] = useState(false)
+    const [mobileBtnHover2, setMobileBtnHover2] = useState(false)
+    const [desktopBtnHover1, setDesktopBtnHover1] = useState(false)
+    const [desktopBtnHover2, setDesktopBtnHover2] = useState(false)
+    const [desktopBtnHover3, setDesktopBtnHover3] = useState(false)
+
     return (
         <Layout wrapperClassName="al-download-page">
-            <main className="bg-zinc-900 text-white min-h-screen flex flex-col justify-center items-center p-6">
-                <div className="max-w-4xl mx-auto text-center space-y-12">
+            <main
+                style={{
+                    backgroundColor: "#18181b", // bg-zinc-900
+                    color: "#ffffff", // text-white
+                    minHeight: "100vh",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    padding: "24px", // p-6
+                }}
+            >
+                {/* Embedded Styles for Animations and Media Queries */}
+                <style>{`
+        @keyframes fade-in-slide-from-top {
+          from {
+            opacity: 0;
+            transform: translateY(-16px); /* slide-in-from-top-4 */
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fade-in-slide {
+          animation: fade-in-slide-from-top 0.5s ease-out forwards; /* duration-500 */
+        }
+
+        /* Media query for desktop grid layout */
+        @media (min-width: 768px) { /* md breakpoint */
+          .desktop-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr)); /* md:grid-cols-2 */
+            gap: 24px; /* gap-6 */
+          }
+        }
+      `}</style>
+
+                <div
+                    style={{
+                        maxWidth: "960px", // max-w-4xl
+                        margin: "0 auto", // mx-auto
+                        textAlign: "center",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "48px", // space-y-12
+                    }}
+                >
                     {/* Logo and Header */}
-                    <div className="space-y-6">
-                        <div className="flex justify-center">
+                    <div
+                        style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: "24px", // space-y-6
+                        }}
+                    >
+                        <div style={{ display: "flex", justifyContent: "center" }}>
                             <Image
                                 src="https://i.imgur.com/CmsixvW.png"
                                 alt="AgeLapse Logo"
                                 width={200}
                                 height={200}
-                                className="drop-shadow-lg"
+                                style={{ filter: "drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))" }} // drop-shadow-lg
                             />
                         </div>
-                        <div className="space-y-4">
-                            <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-zinc-300">
+                        <div
+                            style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: "16px", // space-y-4
+                            }}
+                        >
+                            <h1
+                                style={{
+                                    fontSize: "2.5rem", // text-4xl
+                                    fontWeight: "700", // font-bold
+                                    background: "linear-gradient(to right, #ffffff, #d4d4d8)", // bg-gradient-to-r from-white to-zinc-300
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                }}
+                            >
                                 Download AgeLapse
                             </h1>
-                            <p className="text-xl text-zinc-300 max-w-2xl mx-auto leading-relaxed">
+                            <p
+                                style={{
+                                    fontSize: "1.25rem", // text-xl
+                                    color: "#d4d4d8", // text-zinc-300
+                                    maxWidth: "640px", // max-w-2xl
+                                    margin: "0 auto", // mx-auto
+                                    lineHeight: "1.625", // leading-relaxed
+                                }}
+                            >
                                 Easily create stabilized "photo-a-day" projects with AgeLapse.
                                 <br />
-                                <span className="text-zinc-400 text-lg mt-2 block">100% free and open source.</span>
+                                <span
+                                    style={{
+                                        color: "#a1a1aa", // text-zinc-400
+                                        fontSize: "1.125rem", // text-lg
+                                        marginTop: "8px", // mt-2
+                                        display: "block",
+                                    }}
+                                >
+                100% free and open source.
+              </span>
                             </p>
                         </div>
                     </div>
 
                     {/* Main Action Buttons */}
-                    <div className="flex flex-col items-center gap-4 mt-8 w-full max-w-sm mx-auto">
+                    <div
+                        style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            gap: "16px", // gap-4
+                            marginTop: "32px", // mt-8
+                            width: "100%",
+                            maxWidth: "384px", // max-w-sm
+                            margin: "0 auto", // mx-auto
+                        }}
+                    >
                         <button
                             onClick={() => setShowDownloads(!showDownloads)}
-                            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-zinc-900 flex items-center justify-center"
+                            onMouseEnter={() => setDownloadBtnHover(true)}
+                            onMouseLeave={() => setDownloadBtnHover(false)}
+                            onFocus={() => setDownloadBtnHover(true)}
+                            onBlur={() => setDownloadBtnHover(false)}
+                            style={{
+                                width: "100%",
+                                backgroundColor: downloadBtnHover ? "#1d4ed8" : "#2563eb", // hover:bg-blue-700 : bg-blue-600
+                                color: "#ffffff",
+                                fontWeight: "600", // font-semibold
+                                padding: "12px 32px", // py-3 px-8
+                                borderRadius: "8px", // rounded-lg
+                                boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)", // shadow-lg
+                                transition: "all 0.3s ease-in-out", // transition-all duration-300
+                                transform: downloadBtnHover ? "scale(1.05)" : "scale(1)", // transform hover:scale-105
+                                outline: "none", // focus:outline-none
+                                border: "none",
+                                cursor: "pointer",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                boxSizing: "border-box",
+                                ...(downloadBtnHover && {
+                                    boxShadow: "0 0 0 2px #3b82f6, 0 0 0 4px #18181b", // focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-zinc-900
+                                }),
+                            }}
                         >
-                            <DownloadIcon className="w-5 h-5 mr-2" />
+                            <DownloadIcon style={{ width: "20px", height: "20px", marginRight: "8px" }} />
                             {showDownloads ? "Hide Downloads" : "Download"}
                         </button>
                         <Link
-                            href="/info/docs"
+                            href="https://www.google.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-zinc-900 flex items-center justify-center"
+                            onMouseEnter={() => setDocBtnHover(true)}
+                            onMouseLeave={() => setDocBtnHover(false)}
+                            onFocus={() => setDocBtnHover(true)}
+                            onBlur={() => setDocBtnHover(false)}
+                            style={{
+                                width: "100%",
+                                backgroundColor: docBtnHover ? "#15803d" : "#16a34a", // hover:bg-green-700 : bg-green-600
+                                color: "#ffffff",
+                                fontWeight: "600", // font-semibold
+                                padding: "12px 32px", // py-3 px-8
+                                borderRadius: "8px", // rounded-lg
+                                boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)", // shadow-lg
+                                transition: "all 0.3s ease-in-out", // transition-all duration-300
+                                transform: docBtnHover ? "scale(1.05)" : "scale(1)", // transform hover:scale-105
+                                outline: "none", // focus:outline-none
+                                textDecoration: "none", // Remove underline from Link
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                boxSizing: "border-box",
+                                ...(docBtnHover && {
+                                    boxShadow: "0 0 0 2px #22c55e, 0 0 0 4px #18181b", // focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-zinc-900
+                                }),
+                            }}
                         >
-                            <BookOpenIcon className="w-5 h-5 mr-2" />
+                            <BookOpenIcon style={{ width: "20px", height: "20px", marginRight: "8px" }} />
                             Documentation
                         </Link>
                     </div>
 
                     {/* Conditional Download Sections */}
                     {showDownloads && (
-                        <div className="space-y-12 mt-12 animate-in fade-in slide-in-from-top-4 duration-500">
+                        <div
+                            className="animate-fade-in-slide" // Apply the animation class
+                            style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: "48px", // space-y-12
+                                marginTop: "48px", // mt-12
+                            }}
+                        >
                             {/* Mobile Section */}
-                            <div className="rounded-xl border border-zinc-700 bg-zinc-800/50 backdrop-blur-sm">
-                                <div className="p-8">
-                                    <div className="flex items-center justify-center gap-3 mb-6">
-                                        <SmartphoneIcon className="w-6 h-6 text-zinc-300" />
-                                        <h2 className="text-2xl font-semibold text-zinc-100">Mobile</h2>
+                            <div
+                                style={{
+                                    borderRadius: "12px", // rounded-xl
+                                    border: "1px solid #52525b", // border border-zinc-700
+                                    backgroundColor: "rgba(39, 39, 42, 0.5)", // bg-zinc-800/50
+                                    backdropFilter: "blur(8px)", // backdrop-blur-sm
+                                }}
+                            >
+                                <div style={{ padding: "32px" }}>
+                                    <div
+                                        style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                            gap: "12px", // gap-3
+                                            marginBottom: "24px", // mb-6
+                                        }}
+                                    >
+                                        <SmartphoneIcon style={{ width: "24px", height: "24px", color: "#d4d4d8" }} />
+                                        <h2
+                                            style={{
+                                                fontSize: "1.5rem", // text-2xl
+                                                fontWeight: "600", // font-semibold
+                                                color: "#e4e4e7", // text-zinc-100
+                                            }}
+                                        >
+                                            Mobile
+                                        </h2>
                                     </div>
-                                    <div className="flex flex-wrap justify-center gap-4">
+                                    <div
+                                        style={{
+                                            display: "flex",
+                                            flexWrap: "wrap",
+                                            justifyContent: "center",
+                                            gap: "16px", // gap-4
+                                        }}
+                                    >
                                         <Link
                                             href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-android/agelapse-android-v1.5.2.apk"
-                                            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-12 px-6 bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600 transition-all duration-200 hover:scale-105"
+                                            onMouseEnter={() => setMobileBtnHover1(true)}
+                                            onMouseLeave={() => setMobileBtnHover1(false)}
+                                            onFocus={() => setMobileBtnHover1(true)}
+                                            onBlur={() => setMobileBtnHover1(false)}
+                                            style={{
+                                                display: "inline-flex",
+                                                alignItems: "center",
+                                                justifyContent: "center",
+                                                whiteSpace: "nowrap",
+                                                borderRadius: "6px", // rounded-md
+                                                fontSize: "0.875rem", // text-sm
+                                                fontWeight: "500", // font-medium
+                                                height: "48px", // h-12
+                                                padding: "0 24px", // px-6
+                                                backgroundColor: mobileBtnHover1 ? "#52525b" : "#3f3f46", // hover:bg-zinc-600 : bg-zinc-700
+                                                color: "#ffffff",
+                                                border: "1px solid #52525b", // border border-zinc-600
+                                                transition: "all 0.2s ease-in-out", // transition-all duration-200
+                                                transform: mobileBtnHover1 ? "scale(1.05)" : "scale(1)", // hover:scale-105
+                                                outline: "none",
+                                                textDecoration: "none",
+                                                boxSizing: "border-box",
+                                            }}
                                         >
                                             <Image
                                                 src="https://img.icons8.com/ios-glyphs/24/ffffff/android-os.png"
                                                 alt="Android"
                                                 width={24}
                                                 height={24}
-                                                className="mr-2"
+                                                style={{ marginRight: "8px" }}
                                             />
                                             Download for Android (.apk)
                                         </Link>
                                         <Link
                                             href="https://apps.apple.com/ca/app/agelapse/id6503668205"
-                                            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-12 px-6 bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600 transition-all duration-200 hover:scale-105"
+                                            onMouseEnter={() => setMobileBtnHover2(true)}
+                                            onMouseLeave={() => setMobileBtnHover2(false)}
+                                            onFocus={() => setMobileBtnHover2(true)}
+                                            onBlur={() => setMobileBtnHover2(false)}
+                                            style={{
+                                                display: "inline-flex",
+                                                alignItems: "center",
+                                                justifyContent: "center",
+                                                whiteSpace: "nowrap",
+                                                borderRadius: "6px", // rounded-md
+                                                fontSize: "0.875rem", // text-sm
+                                                fontWeight: "500", // font-medium
+                                                height: "48px", // h-12
+                                                padding: "0 24px", // px-6
+                                                backgroundColor: mobileBtnHover2 ? "#52525b" : "#3f3f46", // hover:bg-zinc-600 : bg-zinc-700
+                                                color: "#ffffff",
+                                                border: "1px solid #52525b", // border border-zinc-600
+                                                transition: "all 0.2s ease-in-out", // transition-all duration-200
+                                                transform: mobileBtnHover2 ? "scale(1.05)" : "scale(1)", // hover:scale-105
+                                                outline: "none",
+                                                textDecoration: "none",
+                                                boxSizing: "border-box",
+                                            }}
                                         >
                                             <Image
                                                 src="https://img.icons8.com/ios-glyphs/24/ffffff/mac-os.png"
                                                 alt="iOS"
                                                 width={24}
                                                 height={24}
-                                                className="mr-2"
+                                                style={{ marginRight: "8px" }}
                                             />
                                             Download on the App Store
                                         </Link>
@@ -191,52 +424,157 @@ export default function Home(): JSX.Element {
                             </div>
 
                             {/* Desktop Section */}
-                            <div className="rounded-xl border border-zinc-700 bg-zinc-800/50 backdrop-blur-sm">
-                                <div className="p-8">
-                                    <div className="flex items-center justify-center gap-3 mb-6">
-                                        <MonitorIcon className="w-6 h-6 text-zinc-300" />
-                                        <h2 className="text-2xl font-semibold text-zinc-100">Desktop</h2>
+                            <div
+                                style={{
+                                    borderRadius: "12px", // rounded-xl
+                                    border: "1px solid #52525b", // border border-zinc-700
+                                    backgroundColor: "rgba(39, 39, 42, 0.5)", // bg-zinc-800/50
+                                    backdropFilter: "blur(8px)", // backdrop-blur-sm
+                                }}
+                            >
+                                <div style={{ padding: "32px" }}>
+                                    <div
+                                        style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                            gap: "12px", // gap-3
+                                            marginBottom: "24px", // mb-6
+                                        }}
+                                    >
+                                        <MonitorIcon style={{ width: "24px", height: "24px", color: "#d4d4d8" }} />
+                                        <h2
+                                            style={{
+                                                fontSize: "1.5rem", // text-2xl
+                                                fontWeight: "600", // font-semibold
+                                                color: "#e4e4e7", // text-zinc-100
+                                            }}
+                                        >
+                                            Desktop
+                                        </h2>
                                     </div>
-                                    <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-                                        <div className="space-y-4">
+                                    <div
+                                        className="desktop-grid" // Apply media query class
+                                        style={{
+                                            gap: "24px", // gap-6
+                                            maxWidth: "640px", // max-w-3xl
+                                            margin: "0 auto", // mx-auto
+                                        }}
+                                    >
+                                        <div
+                                            style={{
+                                                display: "flex",
+                                                flexDirection: "column",
+                                                gap: "16px", // space-y-4
+                                            }}
+                                        >
                                             <Link
                                                 href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-mac-arm64/AgeLapse.v0.4.0.Mac.arm64.zip"
-                                                className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-12 px-6 w-full bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600 transition-all duration-200 hover:scale-105"
+                                                onMouseEnter={() => setDesktopBtnHover1(true)}
+                                                onMouseLeave={() => setDesktopBtnHover1(false)}
+                                                onFocus={() => setDesktopBtnHover1(true)}
+                                                onBlur={() => setDesktopBtnHover1(false)}
+                                                style={{
+                                                    display: "inline-flex",
+                                                    alignItems: "center",
+                                                    justifyContent: "center",
+                                                    whiteSpace: "nowrap",
+                                                    borderRadius: "6px", // rounded-md
+                                                    fontSize: "0.875rem", // text-sm
+                                                    fontWeight: "500", // font-medium
+                                                    height: "48px", // h-12
+                                                    padding: "0 24px", // px-6
+                                                    width: "100%",
+                                                    backgroundColor: desktopBtnHover1 ? "#52525b" : "#3f3f46", // hover:bg-zinc-600 : bg-zinc-700
+                                                    color: "#ffffff",
+                                                    border: "1px solid #52525b", // border border-zinc-600
+                                                    transition: "all 0.2s ease-in-out", // transition-all duration-200
+                                                    transform: desktopBtnHover1 ? "scale(1.05)" : "scale(1)", // hover:scale-105
+                                                    outline: "none",
+                                                    textDecoration: "none",
+                                                    boxSizing: "border-box",
+                                                }}
                                             >
                                                 <Image
                                                     src="https://img.icons8.com/ios-glyphs/24/ffffff/mac-client.png"
                                                     alt="macOS Apple Silicon"
                                                     width={24}
                                                     height={24}
-                                                    className="mr-2"
+                                                    style={{ marginRight: "8px" }}
                                                 />
                                                 Download for Silicon Macs (arm64)
                                             </Link>
                                             <Link
                                                 href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-mac-x86_64/AgeLapse.v0.4.0.Mac.x86_64.zip"
-                                                className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-12 px-6 w-full bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600 transition-all duration-200 hover:scale-105"
+                                                onMouseEnter={() => setDesktopBtnHover2(true)}
+                                                onMouseLeave={() => setDesktopBtnHover2(false)}
+                                                onFocus={() => setDesktopBtnHover2(true)}
+                                                onBlur={() => setDesktopBtnHover2(false)}
+                                                style={{
+                                                    display: "inline-flex",
+                                                    alignItems: "center",
+                                                    justifyContent: "center",
+                                                    whiteSpace: "nowrap",
+                                                    borderRadius: "6px", // rounded-md
+                                                    fontSize: "0.875rem", // text-sm
+                                                    fontWeight: "500", // font-medium
+                                                    height: "48px", // h-12
+                                                    padding: "0 24px", // px-6
+                                                    width: "100%",
+                                                    backgroundColor: desktopBtnHover2 ? "#52525b" : "#3f3f46", // hover:bg-zinc-600 : bg-zinc-700
+                                                    color: "#ffffff",
+                                                    border: "1px solid #52525b", // border border-zinc-600
+                                                    transition: "all 0.2s ease-in-out", // transition-all duration-200
+                                                    transform: desktopBtnHover2 ? "scale(1.05)" : "scale(1)", // hover:scale-105
+                                                    outline: "none",
+                                                    textDecoration: "none",
+                                                    boxSizing: "border-box",
+                                                }}
                                             >
                                                 <Image
                                                     src="https://img.icons8.com/ios-glyphs/24/ffffff/mac-client.png"
                                                     alt="macOS Intel"
                                                     width={24}
                                                     height={24}
-                                                    className="mr-2"
+                                                    style={{ marginRight: "8px" }}
                                                 />
                                                 Download for Intel Macs (x86_64)
                                             </Link>
                                         </div>
-                                        <div className="flex items-center">
+                                        <div style={{ display: "flex", alignItems: "center" }}>
                                             <Link
                                                 href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-windows/AgeLapse-0.4.0.exe"
-                                                className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-12 px-6 w-full bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600 transition-all duration-200 hover:scale-105"
+                                                onMouseEnter={() => setDesktopBtnHover3(true)}
+                                                onMouseLeave={() => setDesktopBtnHover3(false)}
+                                                onFocus={() => setDesktopBtnHover3(true)}
+                                                onBlur={() => setDesktopBtnHover3(false)}
+                                                style={{
+                                                    display: "inline-flex",
+                                                    alignItems: "center",
+                                                    justifyContent: "center",
+                                                    whiteSpace: "nowrap",
+                                                    borderRadius: "6px", // rounded-md
+                                                    fontSize: "0.875rem", // text-sm
+                                                    fontWeight: "500", // font-medium
+                                                    height: "48px", // h-12
+                                                    padding: "0 24px", // px-6
+                                                    width: "100%",
+                                                    backgroundColor: desktopBtnHover3 ? "#52525b" : "#3f3f46", // hover:bg-zinc-600 : bg-zinc-700
+                                                    color: "#ffffff",
+                                                    border: "1px solid #52525b", // border border-zinc-600
+                                                    transition: "all 0.2s ease-in-out", // transition-all duration-200
+                                                    transform: desktopBtnHover3 ? "scale(1.05)" : "scale(1)", // hover:scale-105
+                                                    outline: "none",
+                                                    textDecoration: "none",
+                                                    boxSizing: "border-box",
+                                                }}
                                             >
                                                 <Image
                                                     src="https://img.icons8.com/ios-glyphs/24/ffffff/windows-10.png"
                                                     alt="Windows"
                                                     width={24}
                                                     height={24}
-                                                    className="mr-2"
+                                                    style={{ marginRight: "8px" }}
                                                 />
                                                 Download for Windows (.exe)
                                             </Link>
