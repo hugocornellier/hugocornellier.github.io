@@ -48,3 +48,12 @@
 .al-download-page .main-wrapper {
   background: #121212;
 }
+
+:root {
+  --ifm-footer-background-color: #090909;
+}
+
+footer {
+  background: #090909;
+  text-size: 14px;
+}
