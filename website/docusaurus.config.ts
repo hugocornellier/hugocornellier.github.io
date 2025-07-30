@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
@@ -7,9 +7,7 @@ const config: Config = {
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
-  future: {
-    v4: true,
-  },
+  future: { v4: true },
 
   url: 'https://agelapse.com',
   baseUrl: '/info/',
@@ -25,29 +23,32 @@ const config: Config = {
     locales: ['en'],
   },
 
+  plugins: [
+    // your PostCSS plugin that injects tailwind & autoprefixer
+    require.resolve('./src/plugins/tailwind'),
+  ],
+
   presets: [
     [
       'classic',
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          sidebarPath: require.resolve('./sidebars.ts'),
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+              'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
+          feedOptions: { type: ['rss', 'atom'], xslt: true },
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+              'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
         },
         theme: {
-          customCss: './src/css/custom.css',
+          // 🔑 point at your Tailwind entry file here
+          customCss: require.resolve('./src/css/tailwind.css'),
         },
       } satisfies Preset.Options,
     ],
@@ -57,10 +58,7 @@ const config: Config = {
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: 'AgeLapse',
-      logo: {
-        alt: 'AgeLapse Logo',
-        src: 'img/docusaurus.png',
-      },
+      logo: { alt: 'AgeLapse Logo', src: 'img/docusaurus.png' },
       items: [
         {
           type: 'docSidebar',
@@ -76,33 +74,17 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            {
-              label: 'Download',
-              to: '/',
-            },
-            {
-              label: 'Documentation',
-              to: 'docs/intro',
-            },
+            { label: 'Download', to: '/' },
+            { label: 'Documentation', to: 'docs/intro' },
           ],
         },
         {
           title: 'Community',
-          items: [
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-          ],
+          items: [{ label: 'Discord', href: 'https://discordapp.com/invite/docusaurus' }],
         },
         {
           title: 'More',
-          items: [
-            {
-              label: 'Source Code - GitHub',
-              href: 'https://github.com/agelapse',
-            },
-          ],
+          items: [{ label: 'Source Code - GitHub', href: 'https://github.com/agelapse' }],
         },
       ],
       copyright: ` `,
