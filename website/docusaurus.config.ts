@@ -105,7 +105,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `  `,
+      copyright: ` `,
     },
     prism: {
       theme: prismThemes.github,
