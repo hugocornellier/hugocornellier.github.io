@@ -139,7 +139,7 @@ export default function Home(): JSX.Element {
                             {showDownloads ? "Hide Downloads" : "Download"}
                         </button>
                         <Link
-                            href="https://www.google.com"
+                            href="/info/docs"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-zinc-900 flex items-center justify-center"
