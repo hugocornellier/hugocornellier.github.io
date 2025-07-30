@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.al-download-page,
+.al-download-page .main-wrapper{
+    background:#121212;
+}
+
+.al-download-page,
+.al-download-page .main-wrapper {
+    background: #121212;
+}
+
+:root {
+    --ifm-footer-background-color: #0e0d0d;
+}
+
+footer {
+    background: #0e0d0d;
+    font-size: 14px;
+}
