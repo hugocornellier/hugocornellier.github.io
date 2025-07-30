@@ -23,7 +23,7 @@ export default function Home(): JSX.Element {
     }, []);
 
     return (
-        <Layout>
+        <Layout wrapperClassName="al-download-page">
             <main
                 style={{
                     backgroundColor: '#121212',
@@ -32,9 +32,8 @@ export default function Home(): JSX.Element {
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    minHeight: 'calc(100vh - var(--ifm-navbar-height) - var(--ifm-footer-height))',
-                    margin: 0,
-                    padding: 0,
+                    flexGrow: 1,
+                    width: '100%',
                 }}>
                 <div style={{textAlign: 'center', padding: '20px'}}>
                     <img src="https://i.imgur.com/CmsixvW.png" alt="AgeLapse Logo" width={200} />
