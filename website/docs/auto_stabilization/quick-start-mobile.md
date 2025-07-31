@@ -17,15 +17,27 @@ Here is a quick start guide for the Mobile version of AgeLapse.
 3. Tap **Create**.
 
 ## 3. Import Photos
-1. Tap **Import** in your project.
-2. Select a ZIP file containing your photos.
-3. Wait for the import to complete.
+
+1. Tap **Import** (top-right in the gallery).  
+   Need a walkthrough? Open **Info → Tutorials → Import photos**.
+2. Select:
+   - **ZIP archive** _(recommended)_
+   - **Gallery** or **File System** (AgeLapse supports: `.png`, `.jpg`, `.jpeg`, `.webp`, `.heic`, `.avif`)
+
+3. Wait for the import to finish – photos will be auto-sorted by date.
+
+:::tip
+For large batches (50+), zip them on your PC first to preserve metadata and speed up import.
+:::
 
 ## 4. Stabilize Your Photos
 1. Switch to the **Stabilize** tab.
 2. Watch your photos align and stabilize in real time.
-3. Sit back and relax—AgeLapse handles everything automatically.
-   4. You may have to leave your app open due to restrictions imposed by your phone. 
+3. Sit back and relax while AgeLapse handles everything automatically.
+
+:::danger
+You may have to leave your app open due to restrictions imposed by your phone. It'll be worth it, we promise!
+:::
 
 ## 5. Preview and Customize
 1. After stabilization, tap **Play Video** in the bottom navigation bar.
