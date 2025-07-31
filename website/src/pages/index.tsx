@@ -154,10 +154,15 @@ export default function Home(): JSX.Element {
               }
             
               @media (max-width: 767px) {
-                .windows-container {
-                  margin-top: 24px;
-                }
-              }
+                 .windows-container {
+                   margin-top: 24px;
+                  }
+                  .desktop-grid {
+                   display: flex;
+                   flex-direction: column;
+                   gap: 24px;
+                 }
+               }
             `}
             </style>
 
