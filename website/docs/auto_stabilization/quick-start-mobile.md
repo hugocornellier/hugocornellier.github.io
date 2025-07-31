@@ -35,8 +35,8 @@ For large batches (50+), zip them on your PC first to preserve metadata and spee
 2. Watch your photos align and stabilize in real time.
 3. Sit back and relax while AgeLapse handles everything automatically.
 
-:::danger
-You may have to leave your app open due to restrictions imposed by your phone. It'll be worth it, we promise!
+:::info
+You may have to leave your app open during stabilization. This is due to restrictions imposed by your phone. It'll be worth it, we promise!
 :::
 
 ## 5. Preview and Customize
