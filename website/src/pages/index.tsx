@@ -157,7 +157,7 @@ export default function Home(): JSX.Element {
                 .windows-container {
                   margin-top: 24px;
                 }
-                .ios-container {
+                .android-container {
                   margin-top: 24px;
                 }
               }
@@ -358,7 +358,6 @@ export default function Home(): JSX.Element {
                                         }}
                                     >
                                         <div
-                                            className="ios-container"
                                             style={{
                                                 display: 'flex',
                                                 flexDirection: 'column',
@@ -404,6 +403,7 @@ export default function Home(): JSX.Element {
                                             </Link>
                                         </div>
                                         <div
+                                            className="android-container"
                                             style={{
                                                 display: 'flex',
                                                 flexDirection: 'column',
