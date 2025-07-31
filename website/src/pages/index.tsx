@@ -469,6 +469,7 @@ export default function Home(): JSX.Element {
                                                 gap: '16px',
                                             }}
                                         >
+                                            <div>MacOS</div>
                                             <Link
                                                 href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-mac-arm64/AgeLapse.v0.4.0.Mac.arm64.zip"
                                                 onMouseEnter={() => setDesktopBtnHover1(true)}
@@ -552,7 +553,14 @@ export default function Home(): JSX.Element {
                                             </Link>
                                         </div>
 
-                                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                gap: '16px',
+                                            }}
+                                        >
+                                            <div>Windows</div>
                                             <Link
                                                 href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-windows/AgeLapse-0.4.0.exe"
                                                 onMouseEnter={() => setDesktopBtnHover3(true)}
