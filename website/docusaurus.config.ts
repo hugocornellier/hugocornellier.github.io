@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'AgeLapse',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Auto-stabilize your photos to create a smooth "photo-a-day" project.',
   favicon: 'img/favicon.ico',
 
   future: { v4: true },
@@ -83,11 +83,11 @@ const config: Config = {
         },
         {
           title: 'Community',
-          items: [{ label: 'Discord', href: 'https://discordapp.com/invite/docusaurus' }],
+          items: [{ label: 'Discord (Coming Soon)', href: 'https://agelapse.com/' }],
         },
         {
           title: 'More',
-          items: [{ label: 'Source Code - GitHub', href: 'https://github.com/agelapse' }],
+          items: [{ label: 'Source Code - GitHub', href: 'https://github.com/hugocornellier/agelapse' }],
         },
       ],
       copyright: ` `,
