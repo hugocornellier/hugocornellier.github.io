@@ -129,30 +129,37 @@ export default function Home(): JSX.Element {
                     padding: '24px',
                 }}
             >
-                <style>{`
-          @keyframes fade-in-slide-from-top {
-            from {
-              opacity: 0;
-              transform: translateY(-16px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-
-          .animate-fade-in-slide {
-            animation: fade-in-slide-from-top 0.5s ease-out forwards;
-          }
-
-          @media (min-width: 768px) {
-            .desktop-grid {
-              display: grid;
-              grid-template-columns: repeat(2, minmax(0, 1fr));
-              gap: 24px;
-            }
-          }
-        `}</style>
+            <style>{`
+              @keyframes fade-in-slide-from-top {
+                from {
+                  opacity: 0;
+                  transform: translateY(-16px);
+                }
+                to {
+                  opacity: 1;
+                  transform: translateY(0);
+                }
+              }
+            
+              .animate-fade-in-slide {
+                animation: fade-in-slide-from-top 0.5s ease-out forwards;
+              }
+            
+              @media (min-width: 768px) {
+                .desktop-grid {
+                  display: grid;
+                  grid-template-columns: repeat(2, minmax(0, 1fr));
+                  gap: 24px;
+                }
+              }
+            
+              @media (max-width: 767px) {
+                .windows-container {
+                  margin-top: 24px;
+                }
+              }
+            `}
+            </style>
 
                 <div
                     style={{
@@ -554,6 +561,7 @@ export default function Home(): JSX.Element {
                                         </div>
 
                                         <div
+                                            className="windows-container"
                                             style={{
                                                 display: 'flex',
                                                 flexDirection: 'column',
