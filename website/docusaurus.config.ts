@@ -10,7 +10,7 @@ const config: Config = {
   future: { v4: true },
 
   url: 'https://agelapse.com',
-  baseUrl: '/info/',
+  baseUrl: '/',
   organizationName: 'hugocornellier',
   projectName: 'hugocornellier.github.io',
 
