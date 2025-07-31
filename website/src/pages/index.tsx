@@ -154,15 +154,13 @@ export default function Home(): JSX.Element {
               }
             
               @media (max-width: 767px) {
-                 .windows-container {
-                   margin-top: 24px;
-                  }
-                  .desktop-grid {
-                   display: flex;
-                   flex-direction: column;
-                   gap: 24px;
-                 }
-               }
+                .windows-container {
+                  margin-top: 24px;
+                }
+                .ios-container {
+                  margin-top: 24px;
+                }
+              }
             `}
             </style>
 
@@ -405,6 +403,7 @@ export default function Home(): JSX.Element {
                                             </Link>
                                         </div>
                                         <div
+                                            className="ios-container"
                                             style={{
                                                 display: 'flex',
                                                 flexDirection: 'column',
