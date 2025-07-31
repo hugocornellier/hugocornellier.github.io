@@ -21,7 +21,6 @@ const linkStyle: React.CSSProperties = {
 
 export default function Home(): JSX.Element {
     useEffect(() => {
-        // only enforce HTTPS on real domains, not on localhost HTTP
         if (
             typeof window !== 'undefined' &&
             window.location.protocol === 'http:' &&
@@ -120,14 +119,14 @@ export default function Home(): JSX.Element {
         <Layout wrapperClassName="al-download-page">
             <main
                 style={{
-                    backgroundColor: '#18181b', // bg-zinc-900
-                    color: '#ffffff', // text-white
+                    backgroundColor: '#18181b',
+                    color: '#ffffff',
                     flex: 1,
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    padding: '24px', // p-6
+                    padding: '24px',
                 }}
             >
                 <style>{`

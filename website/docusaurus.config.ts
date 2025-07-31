@@ -24,7 +24,6 @@ const config: Config = {
   },
 
   plugins: [
-    // your PostCSS plugin that injects tailwind & autoprefixer
     require.resolve('./src/plugins/tailwind'),
   ],
 
@@ -34,20 +33,15 @@ const config: Config = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.ts'),
-          editUrl:
-              'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
           feedOptions: { type: ['rss', 'atom'], xslt: true },
-          editUrl:
-              'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
         },
         theme: {
-          // 🔑 point at your Tailwind entry file here
           customCss: [
             require.resolve('./src/css/tailwind.css'),
             require.resolve('./src/css/custom.css'),
