@@ -4,4 +4,4 @@ title: Support & Feedback
 sidebar_position: 4
 ---
 
-To receive support or provide feedback... (TODO)
+For suggestions, feature requests or bugs, please contact **agelapse@gmail.com**.
