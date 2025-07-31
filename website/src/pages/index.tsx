@@ -273,8 +273,10 @@ export default function Home(): JSX.Element {
                                 backgroundColor: docBtnHover ? '#15803d' : '#16a34a',
                                 color: '#ffffff',
                                 fontWeight: 600,
+                                fontSize: '13px',
                                 padding: '12px 32px',
                                 borderRadius: '8px',
+                                textDecoration: 'none',
                                 boxShadow:
                                     '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
                                 transition: 'all 0.3s ease-in-out',
