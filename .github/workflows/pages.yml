@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: read     # checkout source
+  pages: write       # publish to Pages
+  id-token: write    # obtain OIDC token for deploy-pages
+
 jobs:
   build:
     runs-on: ubuntu-latest
