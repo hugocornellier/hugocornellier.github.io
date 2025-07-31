@@ -52,67 +52,6 @@ export default function Home(): JSX.Element {
         </svg>
     )
 
-    const AndroidIcon = ({ style }: { style?: React.CSSProperties }) => (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            style={style}
-        >
-            <rect x="4" y="7" width="16" height="11" rx="2" />
-            <line x1="2" y1="12" x2="2" y2="16" />
-            <line x1="22" y1="12" x2="22" y2="16" />
-            <line x1="8" y1="3" x2="6" y2="6" />
-            <line x1="16" y1="3" x2="18" y2="6" />
-            <circle cx="10" cy="12" r="1" />
-            <circle cx="14" cy="12" r="1" />
-        </svg>
-    )
-
-    const AppleIcon = ({ style }: { style?: React.CSSProperties }) => (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            style={style}
-        >
-            <path d="M16 13c1.5 0 4 1.7 4 6v1a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-1c0-4.3 2.5-6 4-6 1.3 0 2.3.9 3 1 0 0 1.9-1 3-1Z" />
-            <path d="M14 3a3 3 0 0 1-3 3" />
-        </svg>
-    )
-
-    const WindowsIcon = ({ style }: { style?: React.CSSProperties }) => (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            style={style}
-        >
-            <rect x="3"  y="3"  width="9" height="9" />
-            <rect x="3"  y="12" width="9" height="9" />
-            <rect x="12" y="3"  width="9" height="9" />
-            <rect x="12" y="12" width="9" height="9" />
-        </svg>
-    )
-
     const BookOpenIcon = ({ style }: { style?: React.CSSProperties }) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -426,10 +365,7 @@ export default function Home(): JSX.Element {
                                                 gap: '16px',
                                             }}
                                         >
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                                <AppleIcon style={{ width: 20, height: 20 }} />
-                                                iOS
-                                            </div>
+                                            <div>iOS</div>
                                             <Link
                                                 href="https://apps.apple.com/ca/app/agelapse/id6503668205"
                                                 onMouseEnter={() => setMobileBtnHover2(true)}
@@ -474,10 +410,7 @@ export default function Home(): JSX.Element {
                                                 gap: '16px',
                                             }}
                                         >
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                                <AndroidIcon style={{ width: 20, height: 20 }} />
-                                                Android
-                                            </div>
+                                            <div>Android</div>
                                             <Link
                                                 href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-android/agelapse-android-v1.5.2.apk"
                                                 onMouseEnter={() => setMobileBtnHover1(true)}
@@ -567,10 +500,7 @@ export default function Home(): JSX.Element {
                                                 gap: '16px',
                                             }}
                                         >
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                                <AppleIcon style={{ width: 20, height: 20 }} />
-                                                MacOS
-                                            </div>
+                                            <div>MacOS</div>
                                             <Link
                                                 href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-mac-arm64/AgeLapse.v0.4.0.Mac.arm64.zip"
                                                 onMouseEnter={() => setDesktopBtnHover1(true)}
@@ -662,10 +592,7 @@ export default function Home(): JSX.Element {
                                                 gap: '16px',
                                             }}
                                         >
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                                <WindowsIcon style={{ width: 20, height: 20 }} />
-                                                Windows
-                                            </div>
+                                            <div>Windows</div>
                                             <Link
                                                 href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-windows/AgeLapse-0.4.0.exe"
                                                 onMouseEnter={() => setDesktopBtnHover3(true)}
