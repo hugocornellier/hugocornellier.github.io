@@ -332,6 +332,7 @@ export default function Home(): JSX.Element {
                                             style={{
                                                 fontSize: '1.5rem',
                                                 fontWeight: 600,
+                                                margin: 0,
                                                 color: '#e4e4e7',
                                             }}
                                         >
@@ -445,6 +446,7 @@ export default function Home(): JSX.Element {
                                             style={{
                                                 fontSize: '1.5rem',
                                                 fontWeight: 600,
+                                                margin: 0,
                                                 color: '#e4e4e7',
                                             }}
                                         >

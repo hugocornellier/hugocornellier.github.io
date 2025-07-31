@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# Mobile Vs Desktop
+# Mobile vs. Desktop
 
 While AgeLapse’s desktop version offers full project control, we **strongly recommend** using the **Mobile App** if you have an iPhone or Android device:
 
