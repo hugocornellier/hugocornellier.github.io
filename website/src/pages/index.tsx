@@ -270,7 +270,7 @@ export default function Home(): JSX.Element {
                             onBlur={() => setDocBtnHover(false)}
                             style={{
                                 width: '100%',
-                                backgroundColor: docBtnHover ? '#15803d' : '#16a34a',
+                                backgroundColor: docBtnHover ? '#1d4ed8' : '#2563eb',
                                 color: '#ffffff',
                                 fontWeight: 600,
                                 padding: '12px 32px',
@@ -280,13 +280,15 @@ export default function Home(): JSX.Element {
                                 transition: 'all 0.3s ease-in-out',
                                 transform: docBtnHover ? 'scale(1.05)' : 'scale(1)',
                                 outline: 'none',
+                                border: 'none',
+                                cursor: 'pointer',
                                 textDecoration: 'none',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 boxSizing: 'border-box',
                                 ...(docBtnHover && {
-                                    boxShadow: '0 0 0 2px #22c55e, 0 0 0 4px #18181b',
+                                    boxShadow: '0 0 0 2px #3b82f6, 0 0 0 4px #18181b',
                                 }),
                             }}
                         >
