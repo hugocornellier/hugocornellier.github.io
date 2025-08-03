@@ -22,9 +22,9 @@ If you encounter a macOS warning when opening the app for the first time:
 2. Drag & drop your image folder or ZIP file into the main window.
 
 ## 3. Configure and Stabilize
-1. (Optional) Select a custom frame rate.
+1. (Optional) Select a custom frame rate / resolution. 
 2. Click **Start Stabilization**.
-3. Grab a coffee—AgeLapse processes and aligns your photos automatically.
+3. Sit back while AgeLapse processes and aligns your photos automatically.
 
 ## 4. View Your Video
 1. Once stabilization completes, click **Open Video Folder**.
