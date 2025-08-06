@@ -19,7 +19,7 @@ If you encounter a macOS warning when opening the app for the first time:
 
 ## 2. Create a New Project
 1. Launch **AgeLapse**.
-2. Drag & drop your image folder or ZIP file into the main window.
+2. Drag & drop your image folder or files into the main window.
 
 ## 3. Configure and Stabilize
 1. (Optional) Select a custom frame rate / resolution. 
