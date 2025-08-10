@@ -23,6 +23,8 @@ const config: Config = {
     locales: ['en'],
   },
 
+  scripts: [{ src: '/force-dark.js', async: false }],
+
   plugins: [
     require.resolve('./src/plugins/tailwind'),
   ],

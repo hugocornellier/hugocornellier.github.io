@@ -4,4 +4,7 @@ title: Support & Feedback
 sidebar_position: 5
 ---
 
-For suggestions, feature requests or bugs, please contact **agelapse@gmail.com**.
+Have a suggestion, feature requests or a bug to report? Email me here:
+```agelapse@gmail.com```. 
+
+We thrive from receiving user feedback. If there's something on your mind, do not hesitate to reach out.
