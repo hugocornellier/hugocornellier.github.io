@@ -29,8 +29,9 @@ footer {
 [class*="docs-doc-id-usage_manual/mobile/tutorials/"] .table-of-contents .step-circle {
     background: #2d2d2d;
     border-radius: 50%;
-    width: 25px;
-    height: 25px;
+    min-width: 25px;
+    min-height: 25px;
+    line-height: 25px;
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -49,8 +50,8 @@ footer {
     border-radius: 50%;
     min-width: 37px;
     min-height: 37px;
-    text-align: center;
     line-height: 37px;
+    text-align: center;
     font-size: 1.125rem;
     font-weight: bold;
     margin-right: 12px;
