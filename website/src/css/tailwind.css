@@ -37,11 +37,9 @@ footer {
     align-items: center;
 }
 
-[class*="docs-doc-id-usage_manual/mobile/tutorials/"]
-.table-of-contents li > a:has(> .step-circle) {
+[class*="docs-doc-id-usage_manual/mobile/tutorials/"] .table-of-contents li > a:has(> .step-circle) {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .tutorial .step-circle {
