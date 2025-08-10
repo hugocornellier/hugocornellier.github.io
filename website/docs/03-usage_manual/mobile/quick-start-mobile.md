@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Quick Start - Mobile
+# Quick Start
 
 Here is a quick start guide for the Mobile version of AgeLapse.
 

@@ -332,7 +332,7 @@ export default function Home(): JSX.Element {
                                             alignItems: 'center',
                                             justifyContent: 'center',
                                             gap: '12px',
-                                            marginBottom: '24px',
+                                            marginBottom: '30px',
                                         }}
                                     >
                                         <SmartphoneIcon
@@ -348,6 +348,25 @@ export default function Home(): JSX.Element {
                                         >
                                             Mobile
                                         </h2>
+                                        <span
+                                            style={{
+                                                display: 'inline-flex',
+                                                alignItems: 'center',
+                                                gap: 6,
+                                                padding: '4px 8px',
+                                                borderRadius: 9999,
+                                                backgroundColor: '#16a34a',
+                                                color: '#ffffff',
+                                                fontSize: 12,
+                                                fontWeight: 600,
+                                                lineHeight: 1,
+                                            }}
+                                        >
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 2l10 10-10 10L2 12 12 2z"/>
+                                            </svg>
+                                            Recommended
+                                        </span>
                                     </div>
                                     <div
                                         className="desktop-grid"
@@ -467,7 +486,7 @@ export default function Home(): JSX.Element {
                                             alignItems: 'center',
                                             justifyContent: 'center',
                                             gap: '12px',
-                                            marginBottom: '24px',
+                                            marginBottom: '30px',
                                         }}
                                     >
                                         <MonitorIcon
@@ -483,6 +502,25 @@ export default function Home(): JSX.Element {
                                         >
                                             Desktop
                                         </h2>
+                                        <span
+                                            style={{
+                                                display: 'inline-flex',
+                                                alignItems: 'center',
+                                                gap: 6,
+                                                padding: '4px 8px',
+                                                borderRadius: 9999,
+                                                backgroundColor: 'rgb(173, 121, 34)',
+                                                color: '#ffffff',
+                                                fontSize: 12,
+                                                fontWeight: 600,
+                                                lineHeight: 1,
+                                            }}
+                                        >
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 2l10 10-10 10L2 12 12 2z"/>
+                                            </svg>
+                                            Beta
+                                        </span>
                                     </div>
                                     <div
                                         className="desktop-grid"

@@ -1,8 +1,8 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
-# Quick Start - Desktop
+# Quick Start
 
 Here is a quick start guide for the Desktop version of AgeLapse.
 

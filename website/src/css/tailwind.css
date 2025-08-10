@@ -20,3 +20,48 @@ footer {
     background: #0e0d0d;
     font-size: 14px;
 }
+
+.step-circle {
+    display: inline-block;
+    background-color: #2d2d2d;
+    color: white;
+    border-radius: 50%;
+    min-width: 40px;
+    min-height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin-right: 12px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.step:first-of-type {
+    margin-top: 10px;
+}
+
+.step:not(:first-of-type) {
+    margin-top: 30px;
+}
+
+.step-text {
+    flex: 1 1 auto;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.step-img {
+    max-width: 100%;
+    width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
