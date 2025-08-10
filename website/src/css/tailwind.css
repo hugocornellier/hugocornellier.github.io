@@ -21,7 +21,7 @@ footer {
     font-size: 14px;
 }
 
-.docs-doc-id-usage_manual\/mobile\/tutorials\/import-photos .table-of-contents__link:has(> .step-circle) {
+[class*="docs-doc-id-usage_manual/mobile/tutorials/"] .table-of-contents__link:has(> .step-circle) {
     display: flex;
     gap: 12px;
 }
