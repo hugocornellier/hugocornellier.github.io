@@ -5,6 +5,7 @@ import type { JSX } from 'react'
 import React, { useEffect, useState } from 'react'
 import Layout from '@theme/Layout'
 import Link from '@docusaurus/Link'
+import {Sparkles} from "lucide-react";
 
 const linkStyle: React.CSSProperties = {
     backgroundColor: '#1e1e1e',
@@ -362,9 +363,7 @@ export default function Home(): JSX.Element {
                                                 lineHeight: 1,
                                             }}
                                         >
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                                                <path d="M12 2l10 10-10 10L2 12 12 2z"/>
-                                            </svg>
+                                            <Sparkles  width="12" height="12" />
                                             Recommended
                                         </span>
                                     </div>
