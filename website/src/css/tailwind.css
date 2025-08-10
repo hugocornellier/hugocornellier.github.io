@@ -26,6 +26,17 @@ footer {
     gap: 12px;
 }
 
+[class*="docs-doc-id-usage_manual/mobile/tutorials/"] .step-circle {
+    background: #2d2d2d;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .tutorial .step-circle {
     display: inline-block;
     background-color: #2d2d2d;
