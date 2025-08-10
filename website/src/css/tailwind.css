@@ -21,7 +21,7 @@ footer {
     font-size: 14px;
 }
 
-.step-circle {
+.tutorial .step-circle {
     display: inline-block;
     background-color: #2d2d2d;
     color: white;
@@ -36,27 +36,26 @@ footer {
     box-shadow: 0 3px 6px rgba(0,0,0,0.4);
 }
 
-.step {
+.tutorial .step {
     display: flex;
     align-items: center;
-    margin-bottom: 12px;
 }
 
-.step:first-of-type {
+.tutorial .step:first-of-type {
     margin-top: 10px;
 }
 
-.step:not(:first-of-type) {
-    margin-top: 40px;
+.tutorial .step:not(:first-of-type) {
+    margin-top: 50px;
 }
 
-.step-text {
+.tutorial .step-text {
     flex: 1 1 auto;
     font-size: 1.25rem;
     font-weight: 600;
 }
 
-.step-img {
+.tutorial .step-img {
     max-width: 100%;
     width: 400px;
     border-radius: 8px;
