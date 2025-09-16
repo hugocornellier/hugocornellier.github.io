@@ -349,23 +349,6 @@ export default function Home(): JSX.Element {
                                         >
                                             Mobile
                                         </h2>
-                                        <span
-                                            style={{
-                                                display: 'inline-flex',
-                                                alignItems: 'center',
-                                                gap: 6,
-                                                padding: '4px 8px',
-                                                borderRadius: 9999,
-                                                backgroundColor: '#16a34a',
-                                                color: '#ffffff',
-                                                fontSize: 12,
-                                                fontWeight: 600,
-                                                lineHeight: 1,
-                                            }}
-                                        >
-                                            <Sparkles  width="12" height="12" />
-                                            Recommended
-                                        </span>
                                     </div>
                                     <div
                                         className="desktop-grid"
@@ -501,25 +484,6 @@ export default function Home(): JSX.Element {
                                         >
                                             Desktop
                                         </h2>
-                                        <span
-                                            style={{
-                                                display: 'inline-flex',
-                                                alignItems: 'center',
-                                                gap: 6,
-                                                padding: '4px 8px',
-                                                borderRadius: 9999,
-                                                backgroundColor: 'rgb(173, 121, 34)',
-                                                color: '#ffffff',
-                                                fontSize: 12,
-                                                fontWeight: 600,
-                                                lineHeight: 1,
-                                            }}
-                                        >
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                                                <path d="M12 2l10 10-10 10L2 12 12 2z"/>
-                                            </svg>
-                                            Beta
-                                        </span>
                                     </div>
                                     <div
                                         className="desktop-grid"
@@ -539,7 +503,7 @@ export default function Home(): JSX.Element {
                                         >
                                             <div>MacOS</div>
                                             <Link
-                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-mac-arm64/AgeLapse.v0.4.0.Mac.arm64.zip"
+                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-macos/AgeLapse-v2.0.0-macOS.zip"
                                                 onMouseEnter={() => setDesktopBtnHover1(true)}
                                                 onMouseLeave={() => setDesktopBtnHover1(false)}
                                                 onFocus={() => setDesktopBtnHover1(true)}
@@ -576,48 +540,7 @@ export default function Home(): JSX.Element {
                                                     height={24}
                                                     style={{ marginRight: 8 }}
                                                 />
-                                                Download for Silicon Macs (arm64)
-                                            </Link>
-
-                                            <Link
-                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-mac-x86_64/AgeLapse.v0.4.0.Mac.x86_64.zip"
-                                                onMouseEnter={() => setDesktopBtnHover2(true)}
-                                                onMouseLeave={() => setDesktopBtnHover2(false)}
-                                                onFocus={() => setDesktopBtnHover2(true)}
-                                                onBlur={() => setDesktopBtnHover2(false)}
-                                                style={{
-                                                    display: 'inline-flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    whiteSpace: 'nowrap',
-                                                    borderRadius: '6px',
-                                                    fontSize: '0.875rem',
-                                                    fontWeight: 500,
-                                                    height: '48px',
-                                                    padding: '0 24px',
-                                                    width: '100%',
-                                                    backgroundColor: desktopBtnHover2
-                                                        ? '#52525b'
-                                                        : '#3f3f46',
-                                                    color: '#ffffff',
-                                                    border: '1px solid #52525b',
-                                                    transition: 'all 0.2s ease-in-out',
-                                                    transform: desktopBtnHover2
-                                                        ? 'scale(1.05)'
-                                                        : 'scale(1)',
-                                                    outline: 'none',
-                                                    textDecoration: 'none',
-                                                    boxSizing: 'border-box',
-                                                }}
-                                            >
-                                                <img
-                                                    src="https://img.icons8.com/ios-glyphs/24/ffffff/mac-client.png"
-                                                    alt="macOS Intel"
-                                                    width={24}
-                                                    height={24}
-                                                    style={{ marginRight: 8 }}
-                                                />
-                                                Download for Intel Macs (x86_64)
+                                                Download for MacOS (Universal)
                                             </Link>
                                         </div>
 
