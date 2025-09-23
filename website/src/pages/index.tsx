@@ -554,7 +554,7 @@ export default function Home(): JSX.Element {
                                         >
                                             <div>Windows</div>
                                             <Link
-                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-windows/AgeLapse-0.4.0.exe"
+                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-windows-2.0.0/AgeLapse_Setup_2.0.0_x64.exe"
                                                 onMouseEnter={() => setDesktopBtnHover3(true)}
                                                 onMouseLeave={() => setDesktopBtnHover3(false)}
                                                 onFocus={() => setDesktopBtnHover3(true)}
@@ -591,7 +591,7 @@ export default function Home(): JSX.Element {
                                                     height={24}
                                                     style={{ marginRight: 8 }}
                                                 />
-                                                Download for Windows (.exe)
+                                                Download for Windows (x64)
                                             </Link>
                                         </div>
                                     </div>
