@@ -1,9 +1,0 @@
-{
-  "label": "Mobile",
-  "position": 4,
-  "className": "badge-recommended",
-  "link": {
-    "type": "generated-index",
-    "description": "This section aims to provide specific tutorials for AgeLapse."
-  }
-}

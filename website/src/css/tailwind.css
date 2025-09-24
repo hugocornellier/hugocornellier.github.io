@@ -21,12 +21,12 @@ footer {
     font-size: 14px;
 }
 
-[class*="docs-doc-id-usage_manual/mobile/tutorials/"] .table-of-contents__link:has(> .step-circle) {
+[class*="docs-doc-id-usage_manual/tutorials/"] .table-of-contents__link:has(> .step-circle) {
     display: flex;
     gap: 12px;
 }
 
-[class*="docs-doc-id-usage_manual/mobile/tutorials/"] .table-of-contents .step-circle {
+[class*="docs-doc-id-usage_manual/tutorials/"] .table-of-contents .step-circle {
     background: #2d2d2d;
     border-radius: 50%;
     min-width: 25px;
@@ -38,7 +38,7 @@ footer {
     align-items: center;
 }
 
-[class*="docs-doc-id-usage_manual/mobile/tutorials/"] .table-of-contents li > a:has(> .step-circle) {
+[class*="docs-doc-id-usage_manual/tutorials/"] .table-of-contents li > a:has(> .step-circle) {
     display: flex;
     align-items: center;
 }

@@ -1,8 +1,9 @@
 {
-  "label": "Usage Manual",
-  "position": 3,
+  "label": "User Guide",
+  "position": 4,
+  "className": "badge-recommended",
   "link": {
     "type": "generated-index",
-    "description": "This section aims to provide a complete usage manual for AgeLapse."
+    "description": "This section aims to provide specific tutorials for AgeLapse."
   }
 }
