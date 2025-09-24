@@ -1,20 +1,19 @@
 ---
-sidebar_position: 1
+sidebar_position: 4
 ---
 
-# Dev Setup - Mobile
+# Developer Setup
 
-Here is a simple tutorial to help developers run AgeLapse Mobile in a development environment. This is a Flutter build, and will run on iOS and Android.
+Here is a simple tutorial to help developers run AgeLapse in a development environment. This is a Flutter build.
 
 ## For Non-Devs:
 
 Not a developer and just looking to install the app? Click here: https://agelapse.com
 
-## Development Setup (AgeLapse Mobile)
+## Steps
 
 ### Prerequisites
 
-- iOS 13.0+ or Android 5.0+
 - Flutter SDK
 
 1. **Clone the repository**:
@@ -29,6 +28,8 @@ Not a developer and just looking to install the app? Click here: https://agelaps
 3. **Check flutter doctor**. Address anything listed before proceeding:
 
    ```flutter doctor```
+
+   Ensure that the output to the above states "0 Issues" before proceeding.  
 
 4. **Install Dependencies**:
 
