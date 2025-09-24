@@ -318,140 +318,7 @@ export default function Home(): JSX.Element {
                                 marginTop: '48px',
                             }}
                         >
-                            <div
-                                style={{
-                                    borderRadius: '12px',
-                                    border: '1px solid #52525b',
-                                    backgroundColor: 'rgba(39, 39, 42, 0.5)',
-                                    backdropFilter: 'blur(8px)',
-                                }}
-                            >
-                                <div style={{ padding: '32px' }}>
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            gap: '12px',
-                                            marginBottom: '30px',
-                                        }}
-                                    >
-                                        <SmartphoneIcon
-                                            style={{ width: 24, height: 24, color: '#d4d4d8' }}
-                                        />
-                                        <h2
-                                            style={{
-                                                fontSize: '1.5rem',
-                                                fontWeight: 600,
-                                                margin: 0,
-                                                color: '#e4e4e7',
-                                            }}
-                                        >
-                                            Mobile
-                                        </h2>
-                                    </div>
-                                    <div
-                                        className="desktop-grid"
-                                        style={{
-                                            gap: '24px',
-                                            maxWidth: '640px',
-                                            margin: '0 auto',
-                                        }}
-                                    >
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                gap: '16px',
-                                            }}
-                                        >
-                                            <div>iOS</div>
-                                            <Link
-                                                href="https://apps.apple.com/ca/app/agelapse/id6503668205"
-                                                onMouseEnter={() => setMobileBtnHover2(true)}
-                                                onMouseLeave={() => setMobileBtnHover2(false)}
-                                                onFocus={() => setMobileBtnHover2(true)}
-                                                onBlur={() => setMobileBtnHover2(false)}
-                                                style={{
-                                                    display: 'inline-flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    whiteSpace: 'nowrap',
-                                                    borderRadius: '6px',
-                                                    fontSize: '0.875rem',
-                                                    fontWeight: 500,
-                                                    height: '48px',
-                                                    padding: '0 24px',
-                                                    width: '100%',
-                                                    backgroundColor: mobileBtnHover2 ? '#52525b' : '#3f3f46',
-                                                    color: '#ffffff',
-                                                    border: '1px solid #52525b',
-                                                    transition: 'all 0.2s ease-in-out',
-                                                    transform: mobileBtnHover2 ? 'scale(1.05)' : 'scale(1)',
-                                                    outline: 'none',
-                                                    textDecoration: 'none',
-                                                    boxSizing: 'border-box',
-                                                }}
-                                            >
-                                                <img
-                                                    src="https://img.icons8.com/ios-glyphs/24/ffffff/mac-os.png"
-                                                    alt="iOS"
-                                                    width={24}
-                                                    height={24}
-                                                    style={{ marginRight: 8 }}
-                                                />
-                                                Download on the App Store
-                                            </Link>
-                                        </div>
-                                        <div
-                                            className="android-container"
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                gap: '16px',
-                                            }}
-                                        >
-                                            <div>Android</div>
-                                            <Link
-                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-android/agelapse-android-v1.5.2.apk"
-                                                onMouseEnter={() => setMobileBtnHover1(true)}
-                                                onMouseLeave={() => setMobileBtnHover1(false)}
-                                                onFocus={() => setMobileBtnHover1(true)}
-                                                onBlur={() => setMobileBtnHover1(false)}
-                                                style={{
-                                                    display: 'inline-flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    whiteSpace: 'nowrap',
-                                                    borderRadius: '6px',
-                                                    fontSize: '0.875rem',
-                                                    fontWeight: 500,
-                                                    height: '48px',
-                                                    padding: '0 24px',
-                                                    width: '100%',
-                                                    backgroundColor: mobileBtnHover1 ? '#52525b' : '#3f3f46',
-                                                    color: '#ffffff',
-                                                    border: '1px solid #52525b',
-                                                    transition: 'all 0.2s ease-in-out',
-                                                    transform: mobileBtnHover1 ? 'scale(1.05)' : 'scale(1)',
-                                                    outline: 'none',
-                                                    textDecoration: 'none',
-                                                    boxSizing: 'border-box',
-                                                }}
-                                            >
-                                                <img
-                                                    src="https://img.icons8.com/ios-glyphs/24/ffffff/android-os.png"
-                                                    alt="Android"
-                                                    width={24}
-                                                    height={24}
-                                                    style={{ marginRight: 8 }}
-                                                />
-                                                Download for Android (.apk)
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
 
                             <div
                                 style={{
@@ -592,6 +459,141 @@ export default function Home(): JSX.Element {
                                                     style={{ marginRight: 8 }}
                                                 />
                                                 Download for Windows (x64)
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                style={{
+                                    borderRadius: '12px',
+                                    border: '1px solid #52525b',
+                                    backgroundColor: 'rgba(39, 39, 42, 0.5)',
+                                    backdropFilter: 'blur(8px)',
+                                }}
+                            >
+                                <div style={{ padding: '32px' }}>
+                                    <div
+                                        style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            gap: '12px',
+                                            marginBottom: '30px',
+                                        }}
+                                    >
+                                        <SmartphoneIcon
+                                            style={{ width: 24, height: 24, color: '#d4d4d8' }}
+                                        />
+                                        <h2
+                                            style={{
+                                                fontSize: '1.5rem',
+                                                fontWeight: 600,
+                                                margin: 0,
+                                                color: '#e4e4e7',
+                                            }}
+                                        >
+                                            Mobile
+                                        </h2>
+                                    </div>
+                                    <div
+                                        className="desktop-grid"
+                                        style={{
+                                            gap: '24px',
+                                            maxWidth: '640px',
+                                            margin: '0 auto',
+                                        }}
+                                    >
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                gap: '16px',
+                                            }}
+                                        >
+                                            <div>iOS</div>
+                                            <Link
+                                                href="https://apps.apple.com/ca/app/agelapse/id6503668205"
+                                                onMouseEnter={() => setMobileBtnHover2(true)}
+                                                onMouseLeave={() => setMobileBtnHover2(false)}
+                                                onFocus={() => setMobileBtnHover2(true)}
+                                                onBlur={() => setMobileBtnHover2(false)}
+                                                style={{
+                                                    display: 'inline-flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    whiteSpace: 'nowrap',
+                                                    borderRadius: '6px',
+                                                    fontSize: '0.875rem',
+                                                    fontWeight: 500,
+                                                    height: '48px',
+                                                    padding: '0 24px',
+                                                    width: '100%',
+                                                    backgroundColor: mobileBtnHover2 ? '#52525b' : '#3f3f46',
+                                                    color: '#ffffff',
+                                                    border: '1px solid #52525b',
+                                                    transition: 'all 0.2s ease-in-out',
+                                                    transform: mobileBtnHover2 ? 'scale(1.05)' : 'scale(1)',
+                                                    outline: 'none',
+                                                    textDecoration: 'none',
+                                                    boxSizing: 'border-box',
+                                                }}
+                                            >
+                                                <img
+                                                    src="https://img.icons8.com/ios-glyphs/24/ffffff/mac-os.png"
+                                                    alt="iOS"
+                                                    width={24}
+                                                    height={24}
+                                                    style={{ marginRight: 8 }}
+                                                />
+                                                Download on the App Store
+                                            </Link>
+                                        </div>
+                                        <div
+                                            className="android-container"
+                                            style={{
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                gap: '16px',
+                                            }}
+                                        >
+                                            <div>Android</div>
+                                            <Link
+                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-android/agelapse-android-v1.5.2.apk"
+                                                onMouseEnter={() => setMobileBtnHover1(true)}
+                                                onMouseLeave={() => setMobileBtnHover1(false)}
+                                                onFocus={() => setMobileBtnHover1(true)}
+                                                onBlur={() => setMobileBtnHover1(false)}
+                                                style={{
+                                                    display: 'inline-flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    whiteSpace: 'nowrap',
+                                                    borderRadius: '6px',
+                                                    fontSize: '0.875rem',
+                                                    fontWeight: 500,
+                                                    height: '48px',
+                                                    padding: '0 24px',
+                                                    width: '100%',
+                                                    backgroundColor: mobileBtnHover1 ? '#52525b' : '#3f3f46',
+                                                    color: '#ffffff',
+                                                    border: '1px solid #52525b',
+                                                    transition: 'all 0.2s ease-in-out',
+                                                    transform: mobileBtnHover1 ? 'scale(1.05)' : 'scale(1)',
+                                                    outline: 'none',
+                                                    textDecoration: 'none',
+                                                    boxSizing: 'border-box',
+                                                }}
+                                            >
+                                                <img
+                                                    src="https://img.icons8.com/ios-glyphs/24/ffffff/android-os.png"
+                                                    alt="Android"
+                                                    width={24}
+                                                    height={24}
+                                                    style={{ marginRight: 8 }}
+                                                />
+                                                Download for Android (.apk)
                                             </Link>
                                         </div>
                                     </div>
