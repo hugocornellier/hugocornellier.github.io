@@ -6,17 +6,15 @@ sidebar_position: 6
 
 # Privacy Policy
 
-Your privacy is critically important to us. It is AgeLapse's policy to respect your privacy regarding any information we may collect while operating our app. This Privacy Policy applies to our app (hereinafter, "us", "we", or "AgeLapse"). We respect your privacy and are committed to protecting personally identifiable information you may provide us through the app. We have adopted this Privacy Policy to explain what information may be collected on our app, how we use this information, and under what circumstances we may disclose the information to third parties.
+Your privacy is critically important to us. It is AgeLapse's policy to respect your privacy regarding any data processsed through our app. This Privacy Policy applies to our app (hereinafter, "us", "we", or "AgeLapse"). We respect your privacy and are committed to protecting personally identifiable information you may provide us through the app. We have adopted this Privacy Policy to explain how data is handled.
 
 ## 1. Information Collection and Use
 
 AgeLapse does not collect or store any data. All application functions are local to your device, and your data is never transmitted over a network.
 
-## 2. Types of Data Collected
+## 2. Does AgeLapse collect data?
 
-### Face Data
-
-AgeLapse does not collect or store any facial data. We use MLKit to scan photos during the stabilization process and detect landmark positions, such as eyes. After these landmark positions are used for stabilization, they are discarded immediately.
+AgeLapse does not collect or store any data. We use MLKit to scan photos during the stabilization process and detect landmark positions, such as eyes. After these landmark positions are used for stabilization, they are discarded immediately.
 
 ## 3. Use of Data
 
@@ -46,4 +44,4 @@ We may update our Privacy Policy from time to time. We will notify you of any ch
 
 ---
 
-**This Privacy Policy is effective as of September 19, 2025.**
+**This Privacy Policy is effective as of September 25, 2025.**
