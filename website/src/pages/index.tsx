@@ -370,7 +370,7 @@ export default function Home(): JSX.Element {
                                         >
                                             <div>MacOS</div>
                                             <Link
-                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-mac-2.1.0/AgeLapse-v2.1.0.zip"
+                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-mac-2.1.1/AgeLapse-v2.1.1.zip"
                                                 onMouseEnter={() => setDesktopBtnHover1(true)}
                                                 onMouseLeave={() => setDesktopBtnHover1(false)}
                                                 onFocus={() => setDesktopBtnHover1(true)}
