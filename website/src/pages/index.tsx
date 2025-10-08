@@ -471,7 +471,7 @@ export default function Home(): JSX.Element {
                                         >
                                             <div>Linux</div>
                                             <Link
-                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-linux-2.0.1/agelapse-2.0.1-linux.deb"
+                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-linux-2.1.2/agelapse-2.1.2-linux.deb"
                                                 onMouseEnter={() => setDesktopBtnHover2(true)}
                                                 onMouseLeave={() => setDesktopBtnHover2(false)}
                                                 onFocus={() => setDesktopBtnHover2(true)}
