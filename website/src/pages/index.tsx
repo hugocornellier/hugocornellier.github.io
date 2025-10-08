@@ -607,7 +607,7 @@ export default function Home(): JSX.Element {
                                         >
                                             <div>Android</div>
                                             <Link
-                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-android-2.1.2/agelapse-android-v2.1.2.apk"
+                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-android-2.0.1/agelapse-android-v2.0.1.apk"
                                                 onMouseEnter={() => setMobileBtnHover1(true)}
                                                 onMouseLeave={() => setMobileBtnHover1(false)}
                                                 onFocus={() => setMobileBtnHover1(true)}
