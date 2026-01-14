@@ -370,7 +370,7 @@ export default function Home(): JSX.Element {
                                         >
                                             <div>MacOS</div>
                                             <Link
-                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.2.1/AgeLapse-macos-v2.2.1.zip"
+                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.3.0/agelapse-macos-2.3.0-universal.zip"
                                                 onMouseEnter={() => setDesktopBtnHover1(true)}
                                                 onMouseLeave={() => setDesktopBtnHover1(false)}
                                                 onFocus={() => setDesktopBtnHover1(true)}
@@ -421,7 +421,7 @@ export default function Home(): JSX.Element {
                                         >
                                             <div>Windows</div>
                                             <Link
-                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.2.1/AgeLapse_Setup_2.2.1_x64.exe"
+                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.3.0/agelapse-windows-2.3.0-x64.exe"
                                                 onMouseEnter={() => setDesktopBtnHover3(true)}
                                                 onMouseLeave={() => setDesktopBtnHover3(false)}
                                                 onFocus={() => setDesktopBtnHover3(true)}
@@ -471,7 +471,7 @@ export default function Home(): JSX.Element {
                                         >
                                             <div>Linux</div>
                                             <Link
-                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.2.1/agelapse-2.2.1.deb"
+                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.3.0/agelapse-linux-2.3.0-x64.deb"
                                                 onMouseEnter={() => setDesktopBtnHover2(true)}
                                                 onMouseLeave={() => setDesktopBtnHover2(false)}
                                                 onFocus={() => setDesktopBtnHover2(true)}
