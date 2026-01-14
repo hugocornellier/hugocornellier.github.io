@@ -115,6 +115,7 @@ export default function Home(): JSX.Element {
     const [desktopBtnHover1, setDesktopBtnHover1] = useState(false)
     const [desktopBtnHover2, setDesktopBtnHover2] = useState(false)
     const [desktopBtnHover3, setDesktopBtnHover3] = useState(false)
+    const [desktopBtnHover4, setDesktopBtnHover4] = useState(false)
 
     return (
         <Layout wrapperClassName="al-download-page">
@@ -505,6 +506,42 @@ export default function Home(): JSX.Element {
                                                     style={{ marginRight: 8 }}
                                                 />
                                                 Download for Linux (.deb)
+                                            </Link>
+                                            <Link
+                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.3.0/agelapse-linux-2.3.0-x64.flatpak"
+                                                onMouseEnter={() => setDesktopBtnHover4(true)}
+                                                onMouseLeave={() => setDesktopBtnHover4(false)}
+                                                onFocus={() => setDesktopBtnHover4(true)}
+                                                onBlur={() => setDesktopBtnHover4(false)}
+                                                style={{
+                                                    display: 'inline-flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    whiteSpace: 'nowrap',
+                                                    borderRadius: '6px',
+                                                    fontSize: '0.875rem',
+                                                    fontWeight: 500,
+                                                    height: '48px',
+                                                    padding: '0 24px',
+                                                    width: '100%',
+                                                    backgroundColor: desktopBtnHover4 ? '#52525b' : '#3f3f46',
+                                                    color: '#ffffff',
+                                                    border: '1px solid #52525b',
+                                                    transition: 'all 0.2s ease-in-out',
+                                                    transform: desktopBtnHover4 ? 'scale(1.05)' : 'scale(1)',
+                                                    outline: 'none',
+                                                    textDecoration: 'none',
+                                                    boxSizing: 'border-box',
+                                                }}
+                                            >
+                                                <img
+                                                    src="https://img.icons8.com/ios-glyphs/24/ffffff/linux.png"
+                                                    alt="Linux"
+                                                    width={24}
+                                                    height={24}
+                                                    style={{ marginRight: 8 }}
+                                                />
+                                                Download for Linux (.flatpak)
                                             </Link>
                                         </div>
 
