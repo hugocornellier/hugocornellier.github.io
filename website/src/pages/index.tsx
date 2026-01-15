@@ -203,7 +203,7 @@ export default function Home(): JSX.Element {
                                         gap: '12px',
                                     }}>
                                         <Link
-                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.3.0/agelapse-macos-2.3.0-universal.zip"
+                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.3.0/agelapse-macos-v2.3.0-universal.zip"
                                             className="platform-btn"
                                             style={{
                                                 display: 'flex',
