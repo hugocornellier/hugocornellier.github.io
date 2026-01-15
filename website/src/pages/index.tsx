@@ -5,20 +5,7 @@ import type { JSX } from 'react'
 import React, { useEffect, useState } from 'react'
 import Layout from '@theme/Layout'
 import Link from '@docusaurus/Link'
-import {Sparkles} from "lucide-react";
-
-const linkStyle: React.CSSProperties = {
-    backgroundColor: '#1e1e1e',
-    padding: '15px 25px',
-    borderRadius: '8px',
-    textDecoration: 'none',
-    color: '#ffffff',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    minWidth: '200px',
-    transition: 'background-color 0.3s',
-}
+import { Download, BookOpen, Monitor, Smartphone, Apple, ChevronDown } from 'lucide-react'
 
 export default function Home(): JSX.Element {
     useEffect(() => {
@@ -34,653 +21,371 @@ export default function Home(): JSX.Element {
 
     const [showDownloads, setShowDownloads] = useState(false)
 
-    const DownloadIcon = ({ style }: { style?: React.CSSProperties }) => (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            style={style}
-        >
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-            <polyline points="7 10 12 15 17 10" />
-            <line x1="12" x2="12" y1="15" y2="3" />
-        </svg>
-    )
-
-    const BookOpenIcon = ({ style }: { style?: React.CSSProperties }) => (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            style={style}
-        >
-            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-        </svg>
-    )
-
-    const SmartphoneIcon = ({ style }: { style?: React.CSSProperties }) => (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            style={style}
-        >
-            <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
-            <path d="M12 18h.01" />
-        </svg>
-    )
-
-    const MonitorIcon = ({ style }: { style?: React.CSSProperties }) => (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            style={style}
-        >
-            <rect width="20" height="14" x="2" y="3" rx="2" />
-            <path d="M12 17v4" />
-            <path d="M8 21h8" />
-        </svg>
-    )
-
-    const [downloadBtnHover, setDownloadBtnHover] = useState(false)
-    const [docBtnHover, setDocBtnHover] = useState(false)
-    const [mobileBtnHover1, setMobileBtnHover1] = useState(false)
-    const [mobileBtnHover2, setMobileBtnHover2] = useState(false)
-    const [desktopBtnHover1, setDesktopBtnHover1] = useState(false)
-    const [desktopBtnHover2, setDesktopBtnHover2] = useState(false)
-    const [desktopBtnHover3, setDesktopBtnHover3] = useState(false)
-    const [desktopBtnHover4, setDesktopBtnHover4] = useState(false)
+    const accentColor = '#66AACC'
+    const accentHover = '#5599BB'
+    const bgDark = '#0a0a0b'
+    const bgCard = '#141418'
+    const bgCardHover = '#1a1a1f'
+    const borderColor = '#2a2a30'
+    const textPrimary = '#ffffff'
+    const textSecondary = '#a0a0a8'
+    const textMuted = '#707078'
 
     return (
         <Layout wrapperClassName="al-download-page">
-            <main
-                style={{
-                    backgroundColor: '#18181b',
-                    color: '#ffffff',
-                    flex: 1,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '24px',
-                }}
-            >
             <style>{`
-              @keyframes fade-in-slide-from-top {
-                from {
-                  opacity: 0;
-                  transform: translateY(-16px);
+                .al-download-page, .al-download-page .main-wrapper {
+                    background: ${bgDark} !important;
                 }
-                to {
-                  opacity: 1;
-                  transform: translateY(0);
+                .al-download-page .main-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    min-height: calc(100vh - 60px);
                 }
-              }
-            
-              .animate-fade-in-slide {
-                animation: fade-in-slide-from-top 0.5s ease-out forwards;
-              }
-            
-              @media (min-width: 768px) {
-                .desktop-grid {
-                  display: grid;
-                  grid-template-columns: repeat(2, minmax(0, 1fr));
-                  gap: 24px;
+                @keyframes fadeIn {
+                    from { opacity: 0; transform: translateY(-10px); }
+                    to { opacity: 1; transform: translateY(0); }
                 }
-              }
-            
-              @media (max-width: 767px) {
-                .windows-container {
-                  margin-top: 24px;
-                }
-                .android-container {
-                  margin-top: 24px;
-                }
-              }
-            `}
-            </style>
+                .fade-in { animation: fadeIn 0.4s ease-out forwards; }
+                .download-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(102, 170, 204, 0.3); }
+                .docs-btn:hover { background: ${bgCardHover} !important; border-color: ${accentColor} !important; }
+                .platform-btn:hover { background: ${bgCardHover} !important; border-color: ${accentColor} !important; transform: translateY(-1px); }
+                .glow { box-shadow: 0 0 60px rgba(102, 170, 204, 0.15); }
+            `}</style>
 
-                <div
-                    style={{
-                        maxWidth: '960px',
-                        margin: '0 auto',
-                        textAlign: 'center',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '48px',
-                    }}
-                >
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            gap: '24px',
-                        }}
-                    >
-                        <div style={{ display: 'flex', justifyContent: 'center' }}>
-                            <img
-                                src="https://i.imgur.com/CmsixvW.png"
-                                alt="AgeLapse Logo"
-                                style={{
-                                    filter:
-                                        'drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))',
-                                }}
-                            />
-                        </div>
-                        <div
+            <main style={{
+                backgroundColor: bgDark,
+                color: textPrimary,
+                flex: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                padding: '48px 24px',
+            }}>
+                <div style={{
+                    maxWidth: '720px',
+                    width: '100%',
+                    textAlign: 'center',
+                }}>
+                    {/* Logo */}
+                    <div style={{ marginBottom: '32px' }}>
+                        <img
+                            src="https://i.imgur.com/CmsixvW.png"
+                            alt="AgeLapse"
                             style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                gap: '16px',
+                                maxWidth: '280px',
+                                filter: 'drop-shadow(0 4px 20px rgba(102, 170, 204, 0.2))',
                             }}
-                        >
-                            <p
-                                style={{
-                                    fontSize: '1.25rem',
-                                    color: '#d4d4d8',
-                                    maxWidth: '640px',
-                                    margin: '0 auto',
-                                    lineHeight: '1.625',
-                                }}
-                            >
-                                Easily create stabilized &quot;photo-a-day&quot; projects with
-                                AgeLapse.
-                                <br />
-                                <span
-                                    style={{
-                                        color: '#a1a1aa',
-                                        fontSize: '1.125rem',
-                                        marginTop: '8px',
-                                        display: 'block',
-                                    }}
-                                >
-                                  100% free and open source.
-                                </span>
-                            </p>
-                        </div>
+                        />
                     </div>
 
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            gap: '16px',
-                            marginTop: '32px',
-                            width: '100%',
-                            maxWidth: '384px',
-                            margin: '0 auto',
-                        }}
-                    >
+                    {/* Tagline */}
+                    <p style={{
+                        fontSize: '1.25rem',
+                        color: textSecondary,
+                        lineHeight: 1.7,
+                        marginBottom: '8px',
+                        fontWeight: 400,
+                    }}>
+                        Create stabilized <span style={{ color: accentColor }}>"photo-a-day"</span> timelapse projects
+                    </p>
+                    <p style={{
+                        fontSize: '0.95rem',
+                        color: textMuted,
+                        marginBottom: '48px',
+                    }}>
+                        100% free and open source
+                    </p>
+
+                    {/* CTA Buttons */}
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '12px',
+                        maxWidth: '320px',
+                        margin: '0 auto 48px',
+                    }}>
                         <button
                             onClick={() => setShowDownloads(!showDownloads)}
-                            onMouseEnter={() => setDownloadBtnHover(true)}
-                            onMouseLeave={() => setDownloadBtnHover(false)}
-                            onFocus={() => setDownloadBtnHover(true)}
-                            onBlur={() => setDownloadBtnHover(false)}
+                            className="download-btn"
                             style={{
-                                width: '100%',
-                                backgroundColor: downloadBtnHover ? '#1d4ed8' : '#2563eb',
-                                color: '#ffffff',
-                                fontWeight: 600,
-                                padding: '12px 32px',
-                                borderRadius: '8px',
-                                boxShadow:
-                                    '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
-                                transition: 'all 0.3s ease-in-out',
-                                transform: downloadBtnHover ? 'scale(1.05)' : 'scale(1)',
-                                outline: 'none',
-                                border: 'none',
-                                cursor: 'pointer',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                boxSizing: 'border-box',
-                                ...(downloadBtnHover && {
-                                    boxShadow: '0 0 0 2px #3b82f6, 0 0 0 4px #18181b',
-                                }),
+                                gap: '10px',
+                                padding: '16px 32px',
+                                fontSize: '1rem',
+                                fontWeight: 600,
+                                color: '#000',
+                                backgroundColor: accentColor,
+                                border: 'none',
+                                borderRadius: '12px',
+                                cursor: 'pointer',
+                                transition: 'all 0.2s ease',
                             }}
                         >
-                            <DownloadIcon style={{ width: 20, height: 20, marginRight: 8 }} />
+                            <Download size={20} />
                             {showDownloads ? 'Hide Downloads' : 'Download'}
+                            <ChevronDown
+                                size={18}
+                                style={{
+                                    transition: 'transform 0.2s',
+                                    transform: showDownloads ? 'rotate(180deg)' : 'rotate(0deg)',
+                                }}
+                            />
                         </button>
 
                         <Link
                             href="/docs/intro"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onMouseEnter={() => setDocBtnHover(true)}
-                            onMouseLeave={() => setDocBtnHover(false)}
-                            onFocus={() => setDocBtnHover(true)}
-                            onBlur={() => setDocBtnHover(false)}
+                            className="docs-btn"
                             style={{
-                                width: '100%',
-                                backgroundColor: docBtnHover ? '#15803d' : '#16a34a',
-                                color: '#ffffff',
-                                fontWeight: 600,
-                                fontSize: '13px',
-                                padding: '12px 32px',
-                                borderRadius: '8px',
-                                textDecoration: 'none',
-                                boxShadow:
-                                    '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
-                                transition: 'all 0.3s ease-in-out',
-                                transform: docBtnHover ? 'scale(1.05)' : 'scale(1)',
-                                outline: 'none',
-                                border: 'none',
-                                cursor: 'pointer',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                boxSizing: 'border-box',
-                                ...(docBtnHover && {
-                                    boxShadow: '0 0 0 2px #3b82f6, 0 0 0 4px #18181b',
-                                }),
+                                gap: '10px',
+                                padding: '14px 32px',
+                                fontSize: '0.95rem',
+                                fontWeight: 500,
+                                color: textPrimary,
+                                backgroundColor: 'transparent',
+                                border: `1px solid ${borderColor}`,
+                                borderRadius: '12px',
+                                cursor: 'pointer',
+                                transition: 'all 0.2s ease',
+                                textDecoration: 'none',
                             }}
                         >
-                            <BookOpenIcon style={{ width: 20, height: 20, marginRight: 8 }} />
+                            <BookOpen size={18} />
                             Documentation
                         </Link>
                     </div>
 
+                    {/* Downloads Section */}
                     {showDownloads && (
-                        <div
-                            className="animate-fade-in-slide"
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                gap: '48px',
-                                marginTop: '48px',
-                            }}
-                        >
+                        <div className="fade-in" style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '24px',
+                        }}>
+                            {/* Desktop */}
+                            <div className="glow" style={{
+                                backgroundColor: bgCard,
+                                borderRadius: '16px',
+                                border: `1px solid ${borderColor}`,
+                                padding: '32px',
+                            }}>
+                                <div style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    gap: '10px',
+                                    marginBottom: '24px',
+                                }}>
+                                    <Monitor size={20} style={{ color: accentColor }} />
+                                    <h2 style={{
+                                        fontSize: '1.1rem',
+                                        fontWeight: 600,
+                                        margin: 0,
+                                        color: textPrimary,
+                                    }}>Desktop</h2>
+                                </div>
 
-
-                            <div
-                                style={{
-                                    borderRadius: '12px',
-                                    border: '1px solid #52525b',
-                                    backgroundColor: 'rgba(39, 39, 42, 0.5)',
-                                    backdropFilter: 'blur(8px)',
-                                }}
-                            >
-                                <div style={{ padding: '32px' }}>
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            gap: '12px',
-                                            marginBottom: '30px',
-                                        }}
-                                    >
-                                        <MonitorIcon
-                                            style={{ width: 24, height: 24, color: '#d4d4d8' }}
-                                        />
-                                        <h2
+                                <div style={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: '12px',
+                                }}>
+                                    {/* macOS and Windows row */}
+                                    <div style={{
+                                        display: 'grid',
+                                        gridTemplateColumns: 'repeat(2, 1fr)',
+                                        gap: '12px',
+                                    }}>
+                                        <Link
+                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.3.0/agelapse-macos-2.3.0-universal.zip"
+                                            className="platform-btn"
                                             style={{
-                                                fontSize: '1.5rem',
-                                                fontWeight: 600,
-                                                margin: 0,
-                                                color: '#e4e4e7',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                gap: '10px',
+                                                padding: '14px 20px',
+                                                backgroundColor: bgDark,
+                                                border: `1px solid ${borderColor}`,
+                                                borderRadius: '10px',
+                                                color: textPrimary,
+                                                fontSize: '0.875rem',
+                                                fontWeight: 500,
+                                                textDecoration: 'none',
+                                                transition: 'all 0.2s ease',
                                             }}
                                         >
-                                            Desktop
-                                        </h2>
+                                            <Apple size={18} />
+                                            macOS <span style={{ color: textMuted, fontWeight: 400 }}>(Universal)</span>
+                                        </Link>
+
+                                        <Link
+                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.3.0/agelapse-windows-2.3.0-x64.exe"
+                                            className="platform-btn"
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                gap: '10px',
+                                                padding: '14px 20px',
+                                                backgroundColor: bgDark,
+                                                border: `1px solid ${borderColor}`,
+                                                borderRadius: '10px',
+                                                color: textPrimary,
+                                                fontSize: '0.875rem',
+                                                fontWeight: 500,
+                                                textDecoration: 'none',
+                                                transition: 'all 0.2s ease',
+                                            }}
+                                        >
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
+                                            </svg>
+                                            Windows <span style={{ color: textMuted, fontWeight: 400 }}>(x64)</span>
+                                        </Link>
                                     </div>
-                                    <div
-                                        className="desktop-grid"
-                                        style={{
-                                            gap: '24px',
-                                            maxWidth: '640px',
-                                            margin: '0 auto',
-                                        }}
-                                    >
-                                        {/* macOS */}
-                                        <div
+
+                                    {/* Linux row - both options side by side */}
+                                    <div style={{
+                                        display: 'grid',
+                                        gridTemplateColumns: 'repeat(2, 1fr)',
+                                        gap: '12px',
+                                    }}>
+                                        <Link
+                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.3.0/agelapse-linux-2.3.0-x64.deb"
+                                            className="platform-btn"
                                             style={{
                                                 display: 'flex',
-                                                flexDirection: 'column',
-                                                gap: '16px',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                gap: '10px',
+                                                padding: '14px 20px',
+                                                backgroundColor: bgDark,
+                                                border: `1px solid ${borderColor}`,
+                                                borderRadius: '10px',
+                                                color: textPrimary,
+                                                fontSize: '0.875rem',
+                                                fontWeight: 500,
+                                                textDecoration: 'none',
+                                                transition: 'all 0.2s ease',
                                             }}
                                         >
-                                            <div>MacOS</div>
-                                            <Link
-                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.3.0/agelapse-macos-2.3.0-universal.zip"
-                                                onMouseEnter={() => setDesktopBtnHover1(true)}
-                                                onMouseLeave={() => setDesktopBtnHover1(false)}
-                                                onFocus={() => setDesktopBtnHover1(true)}
-                                                onBlur={() => setDesktopBtnHover1(false)}
-                                                style={{
-                                                    display: 'inline-flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    whiteSpace: 'nowrap',
-                                                    borderRadius: '6px',
-                                                    fontSize: '0.875rem',
-                                                    fontWeight: 500,
-                                                    height: '48px',
-                                                    padding: '0 24px',
-                                                    width: '100%',
-                                                    backgroundColor: desktopBtnHover1
-                                                        ? '#52525b'
-                                                        : '#3f3f46',
-                                                    color: '#ffffff',
-                                                    border: '1px solid #52525b',
-                                                    transition: 'all 0.2s ease-in-out',
-                                                    transform: desktopBtnHover1
-                                                        ? 'scale(1.05)'
-                                                        : 'scale(1)',
-                                                    outline: 'none',
-                                                    textDecoration: 'none',
-                                                    boxSizing: 'border-box',
-                                                }}
-                                            >
-                                                <img
-                                                    src="https://img.icons8.com/ios-glyphs/24/ffffff/mac-client.png"
-                                                    alt="macOS Apple Silicon"
-                                                    width={24}
-                                                    height={24}
-                                                    style={{ marginRight: 8 }}
-                                                />
-                                                Download for MacOS (Universal)
-                                            </Link>
-                                        </div>
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 00-.088-.042c-.104-.045-.198-.064-.284-.133a1.312 1.312 0 00-.22-.066c.05-.06.146-.133.183-.198.053-.128.082-.264.088-.402v-.02a1.21 1.21 0 00-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 00-.205.334 1.18 1.18 0 00-.09.4v.019c.002.089.008.179.02.267-.193-.067-.438-.135-.607-.202a1.635 1.635 0 01-.018-.2v-.02a1.772 1.772 0 01.15-.768c.082-.22.232-.406.43-.533a.985.985 0 01.594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2.012-.09.013-.18.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.613.613 0 00-.166-.267.248.248 0 00-.183-.064h-.021c-.071.006-.13.04-.186.132a.552.552 0 00-.12.27.944.944 0 00-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268.01.009.02.018.034.024-.07.057-.117.07-.176.136a.304.304 0 01-.131.068 2.62 2.62 0 01-.275-.402 1.772 1.772 0 01-.155-.667 1.759 1.759 0 01.08-.668 1.43 1.43 0 01.283-.535c.128-.133.26-.2.418-.2zm1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.571.571 0 01.016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.139 1.139 0 01-.448-.067 3.566 3.566 0 01-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71-.07-.268-.005-.47.193-.6.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.002c-.06-.135-.12-.2-.184-.268-.193-.135-.406-.199-.603-.534-.166-.278-.417-.465-.525-.465h-.012c-.126-.003-.209.022-.332.133v.003c-.106.135-.091.2-.124.467-.033.2-.106.467-.148.6-.168.467-.455.867-.918 1.2-.347.199-.578.135-.765.004-.187-.131-.287-.327-.342-.467-.194-.467-.143-.915-.06-1.442-.246-.134-.616-.2-1.012-.2-.26 0-.504.026-.705.135-.142.07-.26.174-.378.311-.472.449-.707.744-1.191 1.008-.376.201-.847.274-1.186.268a.99.99 0 00-.097-.003c-.236 0-.401.03-.54.099-.18-.146-.404-.467-.536-.799a2.093 2.093 0 01-.147-.848c.015-.467.19-.934.464-1.198.298-.32.655-.467 1.079-.534.027-.003.04-.01.048-.014-.025-.198.017-.4.078-.6.107-.262.284-.535.46-.6-.066-.003-.13-.01-.193-.02-.34-.064-.596-.202-.891-.398v.003a2.53 2.53 0 00-.3-.132c-.096-.026-.195-.064-.24-.202v-.003a.559.559 0 01.024-.329c.038-.132.12-.267.195-.334.088-.078.157-.135.262-.135h.01c.047 0 .092.013.135.03.093.027.163.064.24.132.147.134.318.266.476.399.158.135.32.2.496.267l.019.003c.09.027.155.003.208-.064.052-.074.065-.133.06-.267-.022-.468-.039-1.265.07-2.065.048-.349.137-.767.312-1.068l.004-.003c.23-.398.443-.67.857-.936.197-.135.463-.266.787-.4.323-.134.701-.2 1.048-.266l.033-.003c.177-.033.332-.068.465-.133zm4.682 8.527h.003c.143.062.29.1.407.198.128.132.194.266.2.4.012.2-.066.4-.166.535-.2.135-.334.199-.534.266a.792.792 0 00-.2-.064 1.16 1.16 0 01-.197-.132c-.082-.068-.152-.18-.152-.335 0-.066.022-.133.043-.2.035-.066.08-.135.135-.166a.498.498 0 01.2-.135.649.649 0 01.261-.067z"/>
+                                            </svg>
+                                            Linux .deb <span style={{ color: textMuted, fontWeight: 400 }}>(x64)</span>
+                                        </Link>
 
-                                        <div
-                                            className="windows-container"
+                                        <Link
+                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.3.0/agelapse-linux-2.3.0-x64.flatpak"
+                                            className="platform-btn"
                                             style={{
                                                 display: 'flex',
-                                                flexDirection: 'column',
-                                                gap: '16px',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                gap: '10px',
+                                                padding: '14px 20px',
+                                                backgroundColor: bgDark,
+                                                border: `1px solid ${borderColor}`,
+                                                borderRadius: '10px',
+                                                color: textPrimary,
+                                                fontSize: '0.875rem',
+                                                fontWeight: 500,
+                                                textDecoration: 'none',
+                                                transition: 'all 0.2s ease',
                                             }}
                                         >
-                                            <div>Windows</div>
-                                            <Link
-                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.3.0/agelapse-windows-2.3.0-x64.exe"
-                                                onMouseEnter={() => setDesktopBtnHover3(true)}
-                                                onMouseLeave={() => setDesktopBtnHover3(false)}
-                                                onFocus={() => setDesktopBtnHover3(true)}
-                                                onBlur={() => setDesktopBtnHover3(false)}
-                                                style={{
-                                                    display: 'inline-flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    whiteSpace: 'nowrap',
-                                                    borderRadius: '6px',
-                                                    fontSize: '0.875rem',
-                                                    fontWeight: 500,
-                                                    height: '48px',
-                                                    padding: '0 24px',
-                                                    width: '100%',
-                                                    backgroundColor: desktopBtnHover3
-                                                        ? '#52525b'
-                                                        : '#3f3f46',
-                                                    color: '#ffffff',
-                                                    border: '1px solid #52525b',
-                                                    transition: 'all 0.2s ease-in-out',
-                                                    transform: desktopBtnHover3
-                                                        ? 'scale(1.05)'
-                                                        : 'scale(1)',
-                                                    outline: 'none',
-                                                    textDecoration: 'none',
-                                                    boxSizing: 'border-box',
-                                                }}
-                                            >
-                                                <img
-                                                    src="https://img.icons8.com/ios-glyphs/24/ffffff/windows-10.png"
-                                                    alt="Windows"
-                                                    width={24}
-                                                    height={24}
-                                                    style={{ marginRight: 8 }}
-                                                />
-                                                Download for Windows (x64)
-                                            </Link>
-                                        </div>
-
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                gap: '16px',
-                                            }}
-                                        >
-                                            <div>Linux</div>
-                                            <Link
-                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.3.0/agelapse-linux-2.3.0-x64.deb"
-                                                onMouseEnter={() => setDesktopBtnHover2(true)}
-                                                onMouseLeave={() => setDesktopBtnHover2(false)}
-                                                onFocus={() => setDesktopBtnHover2(true)}
-                                                onBlur={() => setDesktopBtnHover2(false)}
-                                                style={{
-                                                    display: 'inline-flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    whiteSpace: 'nowrap',
-                                                    borderRadius: '6px',
-                                                    fontSize: '0.875rem',
-                                                    fontWeight: 500,
-                                                    height: '48px',
-                                                    padding: '0 24px',
-                                                    width: '100%',
-                                                    backgroundColor: desktopBtnHover2 ? '#52525b' : '#3f3f46',
-                                                    color: '#ffffff',
-                                                    border: '1px solid #52525b',
-                                                    transition: 'all 0.2s ease-in-out',
-                                                    transform: desktopBtnHover2 ? 'scale(1.05)' : 'scale(1)',
-                                                    outline: 'none',
-                                                    textDecoration: 'none',
-                                                    boxSizing: 'border-box',
-                                                }}
-                                            >
-                                                <img
-                                                    src="https://img.icons8.com/ios-glyphs/24/ffffff/linux.png"
-                                                    alt="Linux"
-                                                    width={24}
-                                                    height={24}
-                                                    style={{ marginRight: 8 }}
-                                                />
-                                                Download for Linux (.deb)
-                                            </Link>
-                                            <Link
-                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.3.0/agelapse-linux-2.3.0-x64.flatpak"
-                                                onMouseEnter={() => setDesktopBtnHover4(true)}
-                                                onMouseLeave={() => setDesktopBtnHover4(false)}
-                                                onFocus={() => setDesktopBtnHover4(true)}
-                                                onBlur={() => setDesktopBtnHover4(false)}
-                                                style={{
-                                                    display: 'inline-flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    whiteSpace: 'nowrap',
-                                                    borderRadius: '6px',
-                                                    fontSize: '0.875rem',
-                                                    fontWeight: 500,
-                                                    height: '48px',
-                                                    padding: '0 24px',
-                                                    width: '100%',
-                                                    backgroundColor: desktopBtnHover4 ? '#52525b' : '#3f3f46',
-                                                    color: '#ffffff',
-                                                    border: '1px solid #52525b',
-                                                    transition: 'all 0.2s ease-in-out',
-                                                    transform: desktopBtnHover4 ? 'scale(1.05)' : 'scale(1)',
-                                                    outline: 'none',
-                                                    textDecoration: 'none',
-                                                    boxSizing: 'border-box',
-                                                }}
-                                            >
-                                                <img
-                                                    src="https://img.icons8.com/ios-glyphs/24/ffffff/linux.png"
-                                                    alt="Linux"
-                                                    width={24}
-                                                    height={24}
-                                                    style={{ marginRight: 8 }}
-                                                />
-                                                Download for Linux (.flatpak)
-                                            </Link>
-                                        </div>
-
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 00-.088-.042c-.104-.045-.198-.064-.284-.133a1.312 1.312 0 00-.22-.066c.05-.06.146-.133.183-.198.053-.128.082-.264.088-.402v-.02a1.21 1.21 0 00-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 00-.205.334 1.18 1.18 0 00-.09.4v.019c.002.089.008.179.02.267-.193-.067-.438-.135-.607-.202a1.635 1.635 0 01-.018-.2v-.02a1.772 1.772 0 01.15-.768c.082-.22.232-.406.43-.533a.985.985 0 01.594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2.012-.09.013-.18.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.613.613 0 00-.166-.267.248.248 0 00-.183-.064h-.021c-.071.006-.13.04-.186.132a.552.552 0 00-.12.27.944.944 0 00-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268.01.009.02.018.034.024-.07.057-.117.07-.176.136a.304.304 0 01-.131.068 2.62 2.62 0 01-.275-.402 1.772 1.772 0 01-.155-.667 1.759 1.759 0 01.08-.668 1.43 1.43 0 01.283-.535c.128-.133.26-.2.418-.2zm1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.571.571 0 01.016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.139 1.139 0 01-.448-.067 3.566 3.566 0 01-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71-.07-.268-.005-.47.193-.6.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.002c-.06-.135-.12-.2-.184-.268-.193-.135-.406-.199-.603-.534-.166-.278-.417-.465-.525-.465h-.012c-.126-.003-.209.022-.332.133v.003c-.106.135-.091.2-.124.467-.033.2-.106.467-.148.6-.168.467-.455.867-.918 1.2-.347.199-.578.135-.765.004-.187-.131-.287-.327-.342-.467-.194-.467-.143-.915-.06-1.442-.246-.134-.616-.2-1.012-.2-.26 0-.504.026-.705.135-.142.07-.26.174-.378.311-.472.449-.707.744-1.191 1.008-.376.201-.847.274-1.186.268a.99.99 0 00-.097-.003c-.236 0-.401.03-.54.099-.18-.146-.404-.467-.536-.799a2.093 2.093 0 01-.147-.848c.015-.467.19-.934.464-1.198.298-.32.655-.467 1.079-.534.027-.003.04-.01.048-.014-.025-.198.017-.4.078-.6.107-.262.284-.535.46-.6-.066-.003-.13-.01-.193-.02-.34-.064-.596-.202-.891-.398v.003a2.53 2.53 0 00-.3-.132c-.096-.026-.195-.064-.24-.202v-.003a.559.559 0 01.024-.329c.038-.132.12-.267.195-.334.088-.078.157-.135.262-.135h.01c.047 0 .092.013.135.03.093.027.163.064.24.132.147.134.318.266.476.399.158.135.32.2.496.267l.019.003c.09.027.155.003.208-.064.052-.074.065-.133.06-.267-.022-.468-.039-1.265.07-2.065.048-.349.137-.767.312-1.068l.004-.003c.23-.398.443-.67.857-.936.197-.135.463-.266.787-.4.323-.134.701-.2 1.048-.266l.033-.003c.177-.033.332-.068.465-.133zm4.682 8.527h.003c.143.062.29.1.407.198.128.132.194.266.2.4.012.2-.066.4-.166.535-.2.135-.334.199-.534.266a.792.792 0 00-.2-.064 1.16 1.16 0 01-.197-.132c-.082-.068-.152-.18-.152-.335 0-.066.022-.133.043-.2.035-.066.08-.135.135-.166a.498.498 0 01.2-.135.649.649 0 01.261-.067z"/>
+                                            </svg>
+                                            Linux .flatpak <span style={{ color: textMuted, fontWeight: 400 }}>(x64)</span>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
 
-                            <div
-                                style={{
-                                    borderRadius: '12px',
-                                    border: '1px solid #52525b',
-                                    backgroundColor: 'rgba(39, 39, 42, 0.5)',
-                                    backdropFilter: 'blur(8px)',
-                                }}
-                            >
-                                <div style={{ padding: '32px' }}>
-                                    <div
+                            {/* Mobile */}
+                            <div className="glow" style={{
+                                backgroundColor: bgCard,
+                                borderRadius: '16px',
+                                border: `1px solid ${borderColor}`,
+                                padding: '32px',
+                            }}>
+                                <div style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    gap: '10px',
+                                    marginBottom: '24px',
+                                }}>
+                                    <Smartphone size={20} style={{ color: accentColor }} />
+                                    <h2 style={{
+                                        fontSize: '1.1rem',
+                                        fontWeight: 600,
+                                        margin: 0,
+                                        color: textPrimary,
+                                    }}>Mobile</h2>
+                                </div>
+
+                                <div style={{
+                                    display: 'grid',
+                                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                                    gap: '12px',
+                                }}>
+                                    <Link
+                                        href="https://apps.apple.com/ca/app/agelapse/id6503668205"
+                                        className="platform-btn"
                                         style={{
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
-                                            gap: '12px',
-                                            marginBottom: '30px',
+                                            gap: '10px',
+                                            padding: '14px 20px',
+                                            backgroundColor: bgDark,
+                                            border: `1px solid ${borderColor}`,
+                                            borderRadius: '10px',
+                                            color: textPrimary,
+                                            fontSize: '0.875rem',
+                                            fontWeight: 500,
+                                            textDecoration: 'none',
+                                            transition: 'all 0.2s ease',
                                         }}
                                     >
-                                        <SmartphoneIcon
-                                            style={{ width: 24, height: 24, color: '#d4d4d8' }}
-                                        />
-                                        <h2
-                                            style={{
-                                                fontSize: '1.5rem',
-                                                fontWeight: 600,
-                                                margin: 0,
-                                                color: '#e4e4e7',
-                                            }}
-                                        >
-                                            Mobile
-                                        </h2>
-                                    </div>
-                                    <div
-                                        className="desktop-grid"
+                                        <Apple size={18} />
+                                        App Store
+                                    </Link>
+
+                                    <Link
+                                        href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-android-2.0.1/agelapse-android-v2.0.1.apk"
+                                        className="platform-btn"
                                         style={{
-                                            gap: '24px',
-                                            maxWidth: '640px',
-                                            margin: '0 auto',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            gap: '10px',
+                                            padding: '14px 20px',
+                                            backgroundColor: bgDark,
+                                            border: `1px solid ${borderColor}`,
+                                            borderRadius: '10px',
+                                            color: textPrimary,
+                                            fontSize: '0.875rem',
+                                            fontWeight: 500,
+                                            textDecoration: 'none',
+                                            transition: 'all 0.2s ease',
                                         }}
                                     >
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                gap: '16px',
-                                            }}
-                                        >
-                                            <div>iOS</div>
-                                            <Link
-                                                href="https://apps.apple.com/ca/app/agelapse/id6503668205"
-                                                onMouseEnter={() => setMobileBtnHover2(true)}
-                                                onMouseLeave={() => setMobileBtnHover2(false)}
-                                                onFocus={() => setMobileBtnHover2(true)}
-                                                onBlur={() => setMobileBtnHover2(false)}
-                                                style={{
-                                                    display: 'inline-flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    whiteSpace: 'nowrap',
-                                                    borderRadius: '6px',
-                                                    fontSize: '0.875rem',
-                                                    fontWeight: 500,
-                                                    height: '48px',
-                                                    padding: '0 24px',
-                                                    width: '100%',
-                                                    backgroundColor: mobileBtnHover2 ? '#52525b' : '#3f3f46',
-                                                    color: '#ffffff',
-                                                    border: '1px solid #52525b',
-                                                    transition: 'all 0.2s ease-in-out',
-                                                    transform: mobileBtnHover2 ? 'scale(1.05)' : 'scale(1)',
-                                                    outline: 'none',
-                                                    textDecoration: 'none',
-                                                    boxSizing: 'border-box',
-                                                }}
-                                            >
-                                                <img
-                                                    src="https://img.icons8.com/ios-glyphs/24/ffffff/mac-os.png"
-                                                    alt="iOS"
-                                                    width={24}
-                                                    height={24}
-                                                    style={{ marginRight: 8 }}
-                                                />
-                                                Download on the App Store
-                                            </Link>
-                                        </div>
-                                        <div
-                                            className="android-container"
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                gap: '16px',
-                                            }}
-                                        >
-                                            <div>Android</div>
-                                            <Link
-                                                href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-android-2.0.1/agelapse-android-v2.0.1.apk"
-                                                onMouseEnter={() => setMobileBtnHover1(true)}
-                                                onMouseLeave={() => setMobileBtnHover1(false)}
-                                                onFocus={() => setMobileBtnHover1(true)}
-                                                onBlur={() => setMobileBtnHover1(false)}
-                                                style={{
-                                                    display: 'inline-flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    whiteSpace: 'nowrap',
-                                                    borderRadius: '6px',
-                                                    fontSize: '0.875rem',
-                                                    fontWeight: 500,
-                                                    height: '48px',
-                                                    padding: '0 24px',
-                                                    width: '100%',
-                                                    backgroundColor: mobileBtnHover1 ? '#52525b' : '#3f3f46',
-                                                    color: '#ffffff',
-                                                    border: '1px solid #52525b',
-                                                    transition: 'all 0.2s ease-in-out',
-                                                    transform: mobileBtnHover1 ? 'scale(1.05)' : 'scale(1)',
-                                                    outline: 'none',
-                                                    textDecoration: 'none',
-                                                    boxSizing: 'border-box',
-                                                }}
-                                            >
-                                                <img
-                                                    src="https://img.icons8.com/ios-glyphs/24/ffffff/android-os.png"
-                                                    alt="Android"
-                                                    width={24}
-                                                    height={24}
-                                                    style={{ marginRight: 8 }}
-                                                />
-                                                Download for Android (.apk)
-                                            </Link>
-                                        </div>
-                                    </div>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M17.523 15.341a.997.997 0 0 0-.383.318l-3.168-1.833a2.99 2.99 0 0 0 .024-1.65l3.144-1.817a1 1 0 1 0-.5-.865l-3.144 1.817a2.999 2.999 0 1 0 0 3.378l3.168 1.833a1 1 0 1 0 .859-.381zM6 13a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                                            <path d="M18 2H6C3.79 2 2 3.79 2 6v12c0 2.21 1.79 4 4 4h12c2.21 0 4-1.79 4-4V6c0-2.21-1.79-4-4-4zm2 16c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2v12z"/>
+                                        </svg>
+                                        Android (.apk)
+                                    </Link>
                                 </div>
                             </div>
                         </div>
