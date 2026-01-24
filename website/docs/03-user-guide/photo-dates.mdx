@@ -1,0 +1,68 @@
+---
+sidebar_position: 2
+title: Date Detection
+---
+
+# Date Detection
+
+When you import photos into AgeLapse, the app needs to figure out when each photo was taken so it can place them in the correct order on your timeline. Here's how it works.
+
+## The Date Detection Process
+
+AgeLapse uses a smart fallback system, trying multiple methods in order until it finds a valid date:
+
+### 1. Photo Metadata (EXIF Data) - First Choice
+
+Most photos taken with smartphones and cameras contain hidden metadata called EXIF data. This includes the exact date and time the photo was captured. AgeLapse reads this information automatically and looks for the original capture date/time.
+
+### 2. Filename - Second Choice
+
+If your photo doesn't have metadata (common with screenshots, edited photos, or older scans), AgeLapse will try to extract the date from the filename.
+
+**Supported filename formats:**
+
+| Format | Examples | Notes |
+|--------|----------|-------|
+| Year-Month-Day (ISO) | `2023-01-15.jpg`, `2023/01/15_selfie.png` | Recommended (most reliable format) |
+| Day-Month-Year | `15-01-2023.jpg`, `15/01/2023_photo.png` | European format (day first, then month) |
+| Day Month Year | `15 Jan 2023.jpg`, `15Jan2023.jpg`, `15 January 2023.jpg` | Supports abbreviated or full month names |
+| With ordinals | `15th Jan 2023.jpg`, `1st February 2024.jpg` | Ordinal suffixes (st, nd, rd, th) are optional |
+
+**Important notes:**
+- Both dashes (`-`) and slashes (`/`) work as separators
+- Month names are case-insensitive (`jan`, `JAN`, `Jan` all work)
+- Two-digit years are assumed to be 2000s (e.g., `23` → `2023`)
+- The date can appear anywhere in the filename
+
+:::warning Ambiguous dates
+For formats like `01-02-2023`, the app assumes **Day-Month-Year** (European format). This would be interpreted as **February 1st**, not January 2nd. If you need US-style dates (Month-Day-Year), use the ISO format `2023-01-02` instead.
+:::
+
+### 3. File Modification Date -3Last Resort
+
+If the app can't find a date in the metadata or filename, it will use the file's "last modified" date from your computer. This is less reliable since copying or editing a file can change this date.
+
+## Tips for Best Results
+
+**For photos with correct dates:**
+- Photos taken directly with your phone or camera usually work perfectly — the date is embedded automatically.
+
+**For scanned or edited photos:**
+- Name your files with the ISO format: `2020-06-15_scan.jpg` (Year-Month-Day)
+- This format is unambiguous and most reliable
+
+**For bulk imports:**
+- Files in ZIP imports are processed alphabetically
+- Naming files with dates at the start (e.g., `2023-01-15_photo1.jpg`) helps maintain proper order
+
+:::tip
+For large batches (50+), zip them on your PC first to preserve metadata and speed up import.
+:::
+
+## Changing a Photo's Date
+
+Made a mistake or need to adjust? You can manually change any photo's date after import by selecting the photo in your gallery and using the date edit option. The app will automatically reorganize your timeline.
+
+## Timezone Handling
+
+AgeLapse stores both the timestamp and the timezone offset from when the photo was taken. This means your photos are displayed relative to the timezone they were captured in, which matters if you've traveled between time zones.
