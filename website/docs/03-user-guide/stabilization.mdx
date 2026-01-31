@@ -1,0 +1,71 @@
+---
+sidebar_position: 4
+title: Stabilization
+---
+
+# Stabilization
+
+Stabilization is what makes AgeLapse timelapses smooth. It automatically detects faces (or bodies) in your photos and aligns them so your eyes stay in the same position across every frame.
+
+## How It Works
+
+1. You import photos into your project
+2. AgeLapse detects face/body position in each photo
+3. Each photo is transformed (moved, scaled, rotated) to align with your target position
+4. The result: a smooth timelapse where your face doesn't jump around
+
+Stabilization happens automatically after import. You can watch progress in the **Stabilize** tab.
+
+## Stabilization Modes
+
+AgeLapse offers two stabilization modes. Choose based on your needs:
+
+### Fast Mode (Default)
+
+- **Passes:** Up to 4
+- **Corrections:** Position only (horizontal/vertical movement)
+- **Speed:** Fastest
+
+**Best for:**
+- Quick previews
+- Photos taken with minimal camera tilt
+- Large batches where speed matters
+
+### Slow Mode
+
+- **Passes:** Up to 10
+- **Corrections:** Position, rotation, and scale
+- **Speed:** Slower but more thorough
+
+**Best for:**
+- Final/professional results
+- Photos with camera rotation or tilt
+- When you want the smoothest possible output
+
+**To change modes:** Go to **Settings → Stabilization Mode**
+
+:::tip
+Start with **Fast Mode** to preview your timelapse quickly. Switch to **Slow Mode** for your final export if you notice alignment issues.
+:::
+
+## Understanding Status Badges
+
+In the gallery, each photo shows a status badge indicating its stabilization result:
+
+| Badge | Meaning | What to Do |
+|-------|---------|------------|
+| ✓ **Success** | Photo stabilized correctly | Nothing needed |
+| ⚠ **No Faces Found** | Face detection couldn't find a face | Check photo quality, or use manual stabilization |
+| ✗ **Failed** | Stabilization encountered an error | Try manual stabilization |
+
+## Manual Stabilization
+
+Sometimes automatic stabilization doesn't work perfectly. This can happen with:
+- Unusual lighting or shadows
+- Faces partially obscured (sunglasses, masks)
+- Blurry or low-quality photos
+- Extreme camera angles
+
+For these cases, you can manually adjust how a photo is aligned.
+
+[Learn how to manually stabilize photos →](./tutorials/manual-stabilization)

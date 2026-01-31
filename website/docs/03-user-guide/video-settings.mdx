@@ -1,0 +1,88 @@
+---
+sidebar_position: 5
+title: Video Settings
+---
+
+# Video Settings
+
+AgeLapse compiles your stabilized photos into a smooth timelapse video. Customize the output to match your needs.
+
+## Resolution
+
+Choose how detailed your video will be:
+
+- **1080p** (Default) — Standard HD, good balance of quality and file size
+- **4K** — Ultra HD, 4× the detail of 1080p
+- **8K** — Maximum quality, very large files
+- **Custom** — Enter exact dimensions (e.g., `1920x1080`)
+
+:::info
+Higher resolutions produce larger files and take longer to compile. 1080p is recommended for most uses.
+:::
+
+## Aspect Ratio
+
+- **16:9** (Default) — Widescreen format, ideal for YouTube and social media
+- **4:3** — Traditional format, slightly taller frame
+
+### Output Dimensions
+
+The final video size depends on resolution, aspect ratio, and orientation:
+
+| Resolution | 16:9 Landscape | 16:9 Portrait | 4:3 Landscape | 4:3 Portrait |
+|------------|----------------|---------------|---------------|--------------|
+| **1080p**  | 1920 × 1080    | 1080 × 1920   | 1440 × 1080   | 1080 × 1440  |
+| **4K**     | 4096 × 2304    | 2304 × 4096   | 3072 × 2304   | 2304 × 3072  |
+| **8K**     | 7680 × 4320    | 4320 × 7680   | 5760 × 4320   | 4320 × 5760  |
+
+## Framerate
+
+Controls how fast photos play in the video:
+
+- **Auto** (Default) — Adjusts automatically based on how many photos you have
+- **Manual** — Set a specific FPS (frames per second)
+
+Common framerates: 15, 24, 30, or 60 FPS.
+
+:::tip
+For timelapses with fewer photos, lower framerates look smoother. Auto mode handles this for you.
+:::
+
+### How Auto Framerate Works
+
+| Photo Count | Framerate |
+|-------------|-----------|
+| Under 2     | 2 FPS     |
+| 2–3         | 3 FPS     |
+| 4–5         | 4 FPS     |
+| 6–7         | 6 FPS     |
+| 8–11        | 8 FPS     |
+| 12–15       | 10 FPS    |
+| 16+         | 14 FPS    |
+
+## Auto-Compile
+
+- **Enabled** (Default) — Video updates automatically after each new photo you take
+- **Disabled** — Compile manually when you're ready
+
+**When to disable:** Large projects where you want to save processing time during the capture phase. You can then compile once when you're done adding photos.
+
+How to access: **Settings → Auto-compile video**
+
+## Background Color
+
+When photos are rotated or scaled during stabilization, empty areas may appear at the edges. The background color fills these gaps.
+
+- **Default:** Black (#000000)
+- **How to change:** Settings → Background Color → tap to open color picker
+
+You can choose any color using the color picker or enter a hex code directly.
+
+## Orientation
+
+- **Landscape** (Default) — Video is wider than tall
+- **Portrait** — Video is taller than wide
+
+:::info
+Choose the orientation that matches how you took your photos. Portrait is common for selfies, while landscape works well for full-body shots.
+:::

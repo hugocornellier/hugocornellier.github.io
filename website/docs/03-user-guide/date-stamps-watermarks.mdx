@@ -1,0 +1,124 @@
+---
+sidebar_position: 6
+title: Date Stamps & Watermarks
+---
+
+# Date Stamps & Watermarks
+
+Add date stamps to show when each photo was taken, or watermarks for branding your timelapse.
+
+## Date Stamps
+
+Date stamps display the date (and optionally time) on your photos and exported video.
+
+### Enabling Date Stamps
+
+- **Gallery date labels:** Settings → Gallery Settings → **Date labels** (toggle on)
+- **Export date stamps:** Settings → Date Stamp → **Enable**
+
+### Date Formats
+
+#### Gallery Formats
+
+These appear on thumbnails in your gallery view:
+
+| Format | Example |
+|--------|---------|
+| `MM/yy` | 01/24 |
+| `MMM dd` | Jan 05 |
+| `MMM dd 'yy` | Jan 05 '24 |
+| `dd MMM` | 05 Jan |
+| `MMM yyyy` | Jan 2024 |
+| Custom | Your own format |
+
+#### Export Formats
+
+These appear in your exported video:
+
+| Format | Example |
+|--------|---------|
+| `yyyy-MM-dd` | 2024-01-05 |
+| `MM/dd/yyyy` | 01/05/2024 |
+| `dd/MM/yyyy` | 05/01/2024 |
+| `MMM dd, yyyy` | Jan 05, 2024 |
+| `dd MMM yyyy` | 05 Jan 2024 |
+| Custom | Your own format |
+
+:::tip
+Custom formats let you create any date pattern. Export formats can include time (hours, minutes) while gallery formats are date-only.
+:::
+
+### Position
+
+Choose where the date stamp appears:
+
+- **Upper Left**
+- **Upper Right**
+- **Lower Left**
+- **Lower Right** (Default for export)
+
+### Opacity
+
+Control how visible the date stamp is:
+
+- **Range:** 0% (invisible) to 100% (fully visible)
+- **Default:** 100%
+
+### Fonts
+
+#### Bundled Fonts
+
+AgeLapse includes 5 fonts:
+
+| Font | Style |
+|------|-------|
+| **Inter** (Default) | Clean, modern sans-serif |
+| **Roboto** | Google's versatile sans-serif |
+| **Source Sans** | Adobe's readable sans-serif |
+| **Nunito** | Rounded, friendly sans-serif |
+| **JetBrains Mono** | Monospace, technical look |
+
+#### Custom Fonts
+
+Add your own fonts for a personal touch:
+
+- **Supported formats:** `.ttf` and `.otf`
+- **Max file size:** 10 MB
+
+**How to add a custom font:**
+1. Go to **Settings → Date Stamp → Font**
+2. Select **Custom (TTF/OTF)**
+3. Choose your font file
+4. The font will be installed and available immediately
+
+:::info
+Custom fonts persist across app restarts. You can install multiple custom fonts.
+:::
+
+## Watermarks
+
+Add a watermark image to your video output.
+
+### Enabling Watermarks
+
+**Settings → Watermark → Enable**
+
+### Position
+
+- **Upper Left**
+- **Upper Right**
+- **Lower Left** (Default)
+- **Lower Right**
+
+### Opacity
+
+- **Range:** 0% to 100%
+- **Default:** 70%
+
+A lower opacity makes the watermark more subtle while still visible.
+
+## Collision Handling
+
+If you place both a date stamp and watermark in the **same corner**, AgeLapse automatically adds spacing between them so they don't overlap.
+
+For example, if both are set to "Lower Right," the date stamp will shift up slightly to make room for the watermark below it.
