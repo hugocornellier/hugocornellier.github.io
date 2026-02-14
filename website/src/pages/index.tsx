@@ -362,7 +362,7 @@ export default function Home(): JSX.Element {
                                     </Link>
 
                                     <Link
-                                        href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-2.5.0-prerelease/agelapse-2.5.0b-pre-release.apk"
+                                        href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-2.5.0-prerelease/agelapse-2.5.0c-pre-release.apk"
                                         className="platform-btn"
                                         style={{
                                             display: 'flex',
