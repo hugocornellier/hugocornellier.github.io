@@ -203,7 +203,7 @@ export default function Home(): JSX.Element {
                                         gap: '12px',
                                     }}>
                                         <Link
-                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.4.0/agelapse-macos-v2.4.0-universal.zip"
+                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.5.0/agelapse-macos-2.5.0-universal.zip"
                                             className="platform-btn"
                                             style={{
                                                 display: 'flex',
@@ -226,7 +226,7 @@ export default function Home(): JSX.Element {
                                         </Link>
 
                                         <Link
-                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.4.0/agelapse-windows-2.4.0-x64.exe"
+                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.5.0/agelapse-windows-2.5.0-x64.exe"
                                             className="platform-btn"
                                             style={{
                                                 display: 'flex',
@@ -258,7 +258,7 @@ export default function Home(): JSX.Element {
                                         gap: '12px',
                                     }}>
                                         <Link
-                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.4.0/agelapse-linux-2.4.0-x64.deb"
+                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.5.0/agelapse-linux-2.5.0-x64.deb"
                                             className="platform-btn"
                                             style={{
                                                 display: 'flex',
@@ -283,7 +283,7 @@ export default function Home(): JSX.Element {
                                         </Link>
 
                                         <Link
-                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.4.0/agelapse-linux-2.4.0-x64.flatpak"
+                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.5.0/agelapse-linux-2.5.0-x64.flatpak"
                                             className="platform-btn"
                                             style={{
                                                 display: 'flex',
@@ -362,7 +362,7 @@ export default function Home(): JSX.Element {
                                     </Link>
 
                                     <Link
-                                        href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-2.5.0-prerelease/agelapse-2.5.0b-pre-release.apk"
+                                        href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.5.0/agelapse-android-2.5.0-universal.apk"
                                         className="platform-btn"
                                         style={{
                                             display: 'flex',

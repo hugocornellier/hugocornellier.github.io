@@ -1,0 +1,123 @@
+---
+sidebar_position: 9
+title: Exporting Photos
+---
+
+# Exporting Photos
+
+Export your photos as a ZIP archive to share, backup, or use in other applications.
+
+## Export Options
+
+When exporting, you can choose what to include:
+
+| Option | Description |
+|--------|-------------|
+| **Raw Photos** | Original unprocessed images in their original format |
+| **Stabilized Photos** | Face-aligned processed images (always PNG format) |
+| **Both** | Includes both raw and stabilized in separate folders |
+
+You can toggle each option independently. At least one must be selected.
+
+## How to Export
+
+1. Open the **Gallery** tab
+2. Tap the **Export** button (top-right)
+3. Toggle which photo types to include
+4. Tap **Export to ZIP**
+5. Wait for the export to complete
+
+### Exporting Selected Photos
+
+To export only specific photos:
+
+1. Tap the **Select** button in the gallery
+2. Tap photos to select them (checkmarks appear)
+3. Tap **Export Selected**
+4. Choose your export options
+5. Tap **Export to ZIP**
+
+## Where Files Are Saved
+
+Export behavior varies by platform:
+
+### Android
+- ZIP is saved directly to **Downloads/AgeLapse Exports/**
+- No additional steps needed
+- If save fails, share sheet opens as fallback
+
+### iOS
+- Share sheet opens automatically
+- Choose where to save: Files, iCloud, AirDrop, etc.
+- Or share directly to another app
+
+### Desktop (macOS, Windows, Linux)
+- File save dialog opens
+- Choose your save location
+- Enter filename (suggested name provided)
+
+## ZIP Contents
+
+The exported ZIP is organized into folders:
+
+```
+MyProject_AgeLapse_2024-01-15_143052.zip
+├── Raw/
+│   ├── 2024-01-15_10-30-45.jpg
+│   ├── 2024-01-15_10-30-46.jpg
+│   └── ...
+└── Stabilized/
+    ├── 2024-01-15_10-30-45.png
+    ├── 2024-01-15_10-30-46.png
+    └── ...
+```
+
+**File naming inside ZIP:**
+- Format: `YYYY-MM-DD_HH-mm-ss.ext`
+- Based on when each photo was originally taken
+- Duplicates get numbered: `2024-01-15_10-30-45 (2).jpg`
+
+**ZIP filename format:**
+- `{ProjectName}_AgeLapse_{Date}_{Time}.zip`
+- Example: `Wedding_Timelapse_AgeLapse_2024-01-15_143052.zip`
+
+## Export with Date Stamps
+
+If you have date stamps enabled for export, they'll be burned into the stabilized photos before zipping.
+
+To configure date stamps: **Settings → Date Stamp**
+
+[Learn about date stamps →](./date-stamps-watermarks)
+
+## Export Progress
+
+During export, you'll see:
+- A circular progress indicator
+- Percentage complete (0-100%)
+- Export cannot be cancelled once started
+
+## Video Export
+
+Video export is separate from photo export.
+
+To export your timelapse video:
+
+1. Go to the **Play Video** tab
+2. Tap the **Share** button
+3. Choose where to save or share
+
+Video is exported as MP4 (H.264). On iOS/macOS, transparent videos use MOV format with ProRes.
+
+## Tips
+
+:::tip
+**For backup:** Export "Both" to keep your originals alongside the stabilized versions.
+:::
+
+:::tip
+**For sharing:** Export "Stabilized Photos" only for a smaller file size with the aligned results.
+:::
+
+:::info
+Photos are not compressed during ZIP creation to preserve quality. The ZIP file will be roughly the same size as all the photos combined.
+:::

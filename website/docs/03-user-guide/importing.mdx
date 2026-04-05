@@ -1,0 +1,130 @@
+---
+sidebar_position: 8
+title: Importing Photos
+---
+
+# Importing Photos
+
+AgeLapse supports multiple ways to import photos into your project. Choose the method that works best for your workflow.
+
+## Import Methods
+
+### Gallery Picker (Mobile Only)
+
+Select photos directly from your device's photo library.
+
+1. Tap **Import** in the gallery
+2. Select **Gallery**
+3. Choose up to **100 photos** at a time
+4. Tap **Done** to import
+
+:::info
+The 100 photo limit is per selection. For larger imports, use the ZIP method or import in multiple batches.
+:::
+
+### File Picker (All Platforms)
+
+Browse and select files from your device's file system.
+
+1. Tap **Import** in the gallery
+2. Select **File System**
+3. Navigate to your photos and select them
+4. Confirm to import
+
+No limit on number of files selected.
+
+### Drag and Drop (Desktop Only)
+
+The fastest way to import on macOS, Windows, and Linux.
+
+1. Tap **Import** in the gallery to open the import panel
+2. Drag files or folders directly onto the drop zone
+3. Release to start importing
+
+**What you can drag:**
+- Individual image files
+- Entire folders (scanned recursively)
+- ZIP archives
+- Any combination of the above
+
+:::tip
+Drag and drop is the recommended import method on desktop. It supports folders, so you can import entire photo directories at once.
+:::
+
+### ZIP Import (All Platforms)
+
+Import photos from a ZIP archive.
+
+1. Tap **Import** in the gallery
+2. Select **ZIP Archive**
+3. Choose your ZIP file
+4. Photos are extracted and imported automatically
+
+**ZIP handling:**
+- Folder structure inside ZIP is flattened (all photos imported to same level)
+- System files (`.DS_Store`, `__MACOSX`) are automatically skipped
+- Files are sorted alphabetically during import
+
+## Supported Formats
+
+AgeLapse supports these image formats:
+
+| Format | Extensions | Notes |
+|--------|------------|-------|
+| JPEG | `.jpg`, `.jpeg`, `.jfif`, `.pjpeg`, `.pjp` | Most common format |
+| PNG | `.png`, `.apng` | Includes animated PNG |
+| WebP | `.webp` | Google's modern format |
+| HEIC/HEIF | `.heic`, `.heif` | Apple's high-efficiency format |
+| AVIF | `.avif` | AV1 image format |
+| BMP | `.bmp` | Bitmap |
+| TIFF | `.tif`, `.tiff` | High quality |
+| GIF | `.gif` | Including animated |
+
+:::info
+HEIC and AVIF files are automatically converted during import (HEIC → JPG, AVIF → PNG) to ensure compatibility across all platforms.
+:::
+
+## Duplicate Detection
+
+AgeLapse automatically detects and skips duplicate photos during import.
+
+**How it works:**
+- Photos are compared by **timestamp** and **file size**
+- If both match an existing photo, it's skipped
+- If timestamp matches but size differs, the photo is imported with an adjusted timestamp
+
+**What you'll see:**
+- Duplicates are skipped silently during import
+- The import summary shows: "Skipped (already imported): X"
+
+## Date Detection
+
+AgeLapse determines when each photo was taken using this priority:
+
+1. **EXIF data** — Reads `DateTimeOriginal` from photo metadata (most accurate)
+2. **GPS timestamp** — Uses GPS date/time if available
+3. **Filename** — Parses dates from filenames like `2024-01-15.jpg` or `15 Jan 2024.jpg`
+4. **File modification date** — Falls back to when the file was last modified
+
+:::tip
+For best results, import photos that have EXIF data intact. If importing from a ZIP, use original camera files rather than screenshots or edited copies.
+:::
+
+## Large Imports
+
+When importing more than **500 files** at once (via drag-drop or folder), AgeLapse will ask for confirmation before proceeding.
+
+**Other limits:**
+- Gallery picker: 100 photos per selection
+- Folder scanning: 50 levels deep maximum
+- Minimum file size: 10 KB (smaller files are skipped)
+
+## Import Progress
+
+During import, you'll see:
+- A progress indicator showing completion percentage
+- The date of the photo currently being processed
+
+:::info
+Import cannot be cancelled once started. For very large imports, consider breaking them into smaller batches.
+:::
