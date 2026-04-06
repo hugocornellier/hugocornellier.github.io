@@ -20,6 +20,7 @@ export default function Home(): JSX.Element {
     }, []);
 
     const [showDownloads, setShowDownloads] = useState(false)
+    const [showOlderVersions, setShowOlderVersions] = useState(false)
 
     const accentColor = '#66AACC'
     const accentHover = '#5599BB'
@@ -51,6 +52,8 @@ export default function Home(): JSX.Element {
                 .docs-btn:hover { background: ${bgCardHover} !important; border-color: ${accentColor} !important; }
                 .platform-btn:hover { background: ${bgCardHover} !important; border-color: ${accentColor} !important; transform: translateY(-1px); }
                 .glow { box-shadow: 0 0 60px rgba(102, 170, 204, 0.15); }
+                .desktop-grid { grid-template-columns: repeat(2, 1fr); }
+                @media (max-width: 480px) { .desktop-grid { grid-template-columns: 1fr !important; } }
             `}</style>
 
             <main style={{
@@ -197,9 +200,8 @@ export default function Home(): JSX.Element {
                                     gap: '12px',
                                 }}>
                                     {/* macOS and Windows row */}
-                                    <div style={{
+                                    <div className="desktop-grid" style={{
                                         display: 'grid',
-                                        gridTemplateColumns: 'repeat(2, 1fr)',
                                         gap: '12px',
                                     }}>
                                         <Link
@@ -252,9 +254,8 @@ export default function Home(): JSX.Element {
                                     </div>
 
                                     {/* Linux row - both options side by side */}
-                                    <div style={{
+                                    <div className="desktop-grid" style={{
                                         display: 'grid',
-                                        gridTemplateColumns: 'repeat(2, 1fr)',
                                         gap: '12px',
                                     }}>
                                         <Link
@@ -387,6 +388,111 @@ export default function Home(): JSX.Element {
                                         Android (.apk)
                                     </Link>
                                 </div>
+                            </div>
+
+                            {/* Older Versions */}
+                            <div style={{ textAlign: 'center', marginTop: '8px' }}>
+                                <button
+                                    onClick={() => setShowOlderVersions(!showOlderVersions)}
+                                    style={{
+                                        background: 'none',
+                                        border: 'none',
+                                        color: textMuted,
+                                        fontSize: '0.85rem',
+                                        cursor: 'pointer',
+                                        textDecoration: 'underline',
+                                        padding: '8px',
+                                    }}
+                                >
+                                    {showOlderVersions ? 'Hide older versions' : 'Looking for an older version?'}
+                                </button>
+
+                                {showOlderVersions && (
+                                    <div className="fade-in" style={{
+                                        marginTop: '16px',
+                                        backgroundColor: bgCard,
+                                        borderRadius: '12px',
+                                        border: `1px solid ${borderColor}`,
+                                        padding: '24px',
+                                        textAlign: 'left',
+                                    }}>
+                                        {[
+                                            {
+                                                version: '2.5.0',
+                                                tag: 'agelapse-v2.5.0',
+                                                platforms: [
+                                                    { name: 'macOS', file: 'agelapse-macos-2.5.0-universal.zip' },
+                                                    { name: 'Windows', file: 'agelapse-windows-2.5.0-x64.exe' },
+                                                    { name: 'Linux .deb', file: 'agelapse-linux-2.5.0-x64.deb' },
+                                                    { name: 'Linux .flatpak', file: 'agelapse-linux-2.5.0-x64.flatpak' },
+                                                    { name: 'Android', file: 'agelapse-android-2.5.0-universal.apk' },
+                                                ],
+                                            },
+                                            {
+                                                version: '2.4.0',
+                                                tag: 'agelapse-v2.4.0',
+                                                platforms: [
+                                                    { name: 'macOS', file: 'agelapse-macos-v2.4.0-universal.zip' },
+                                                    { name: 'Windows', file: 'agelapse-windows-2.4.0-x64.exe' },
+                                                    { name: 'Linux .deb', file: 'agelapse-linux-2.4.0-x64.deb' },
+                                                    { name: 'Linux .flatpak', file: 'agelapse-linux-2.4.0-x64.flatpak' },
+                                                ],
+                                            },
+                                            {
+                                                version: '2.3.0',
+                                                tag: 'agelapse-v2.3.0',
+                                                platforms: [
+                                                    { name: 'macOS', file: 'agelapse-macos-v2.3.0-universal.zip' },
+                                                    { name: 'Windows', file: 'agelapse-windows-2.3.0-x64.exe' },
+                                                    { name: 'Linux .deb', file: 'agelapse-linux-2.3.0-x64.deb' },
+                                                    { name: 'Linux .flatpak', file: 'agelapse-linux-2.3.0-x64.flatpak' },
+                                                ],
+                                            },
+                                            {
+                                                version: '2.2.1',
+                                                tag: 'agelapse-v2.2.1',
+                                                platforms: [
+                                                    { name: 'macOS', file: 'AgeLapse-macos-v2.2.1.zip' },
+                                                    { name: 'Windows', file: 'AgeLapse_Setup_2.2.1_x64.exe' },
+                                                    { name: 'Linux .deb', file: 'agelapse-2.2.1.deb' },
+                                                ],
+                                            },
+                                        ].map(({ version, tag, platforms }, i) => (
+                                            <div key={version} style={{
+                                                padding: '12px 0',
+                                                borderBottom: i < 3 ? `1px solid ${borderColor}` : 'none',
+                                            }}>
+                                                <div style={{
+                                                    fontSize: '0.9rem',
+                                                    fontWeight: 600,
+                                                    color: textPrimary,
+                                                    marginBottom: '6px',
+                                                }}>
+                                                    v{version}
+                                                </div>
+                                                <div style={{
+                                                    display: 'flex',
+                                                    flexWrap: 'wrap',
+                                                    gap: '4px 16px',
+                                                }}>
+                                                    {platforms.map(({ name, file }) => (
+                                                        <Link
+                                                            key={name}
+                                                            href={`https://github.com/hugocornellier/agelapse/releases/download/${tag}/${file}`}
+                                                            style={{
+                                                                fontSize: '0.8rem',
+                                                                color: accentColor,
+                                                                textDecoration: 'none',
+                                                            }}
+                                                        >
+                                                            {name}
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         </div>
                     )}
