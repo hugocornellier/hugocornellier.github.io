@@ -4,6 +4,28 @@ title: Changelog
 sidebar_position: 7
 ---
 
+### v2.6.0 (Apr 2026)
+
+#### New Features
+- Background blur zoom setting
+
+#### Improvements
+- Major performance improvements across all platforms: 
+  - ~1.5x faster stabilization
+  - ~2-3x faster photo import 
+- Smoother, more responsive camera
+- Reduced Android binary size (~500MB -> ~350MB) by debloating and stripping FFmpeg binary to a minimal version
+
+#### Bug Fixes
+- Fix macOS release crash importing TIFF, JP2, and AVIF files
+- Fix Android JVM compatibility issues
+- Fix duplicated file extension in gallery preview info dialog
+- Fix bug affecting changing settings during active stabilization
+- Date stamps:
+  - Fix date stamp crash when compiling with hundreds of photos
+  - Fix FFmpeg drawtext font path escaping on Windows
+  - Fix drawtext date stamps not rendering (chained enable expressions)
+
 ### v2.5.1 (Apr 2026)
 
 #### Improvements
