@@ -205,7 +205,7 @@ export default function Home(): JSX.Element {
                                         gap: '12px',
                                     }}>
                                         <Link
-                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.6.0/agelapse-macos-2.6.0-universal.zip"
+                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.7.0/agelapse-macos-2.7.0-universal.zip"
                                             className="platform-btn"
                                             style={{
                                                 display: 'flex',
@@ -228,7 +228,7 @@ export default function Home(): JSX.Element {
                                         </Link>
 
                                         <Link
-                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.6.0/agelapse-windows-2.6.0-x64.exe"
+                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.7.0/agelapse-windows-2.7.0-x64.exe"
                                             className="platform-btn"
                                             style={{
                                                 display: 'flex',
@@ -259,7 +259,7 @@ export default function Home(): JSX.Element {
                                         gap: '12px',
                                     }}>
                                         <Link
-                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.6.0/agelapse-linux-2.6.0-x64.deb"
+                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.7.0/agelapse-linux-2.7.0-x64.deb"
                                             className="platform-btn"
                                             style={{
                                                 display: 'flex',
@@ -284,7 +284,7 @@ export default function Home(): JSX.Element {
                                         </Link>
 
                                         <Link
-                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.6.0/agelapse-linux-2.6.0-x64.flatpak"
+                                            href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.7.0/agelapse-linux-2.7.0-x64.flatpak"
                                             className="platform-btn"
                                             style={{
                                                 display: 'flex',
@@ -363,7 +363,7 @@ export default function Home(): JSX.Element {
                                     </Link>
 
                                     <Link
-                                        href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.6.0/agelapse-android-2.6.0.apk"
+                                        href="https://github.com/hugocornellier/agelapse/releases/download/agelapse-v2.7.0/agelapse-android-2.7.0.apk"
                                         className="platform-btn"
                                         style={{
                                             display: 'flex',
@@ -417,6 +417,17 @@ export default function Home(): JSX.Element {
                                         textAlign: 'left',
                                     }}>
                                         {[
+                                            {
+                                                version: '2.6.0',
+                                                tag: 'agelapse-v2.6.0',
+                                                platforms: [
+                                                    { name: 'macOS', file: 'agelapse-macos-2.6.0-universal.zip' },
+                                                    { name: 'Windows', file: 'agelapse-windows-2.6.0-x64.exe' },
+                                                    { name: 'Linux .deb', file: 'agelapse-linux-2.6.0-x64.deb' },
+                                                    { name: 'Linux .flatpak', file: 'agelapse-linux-2.6.0-x64.flatpak' },
+                                                    { name: 'Android', file: 'agelapse-android-2.6.0.apk' },
+                                                ],
+                                            },
                                             {
                                                 version: '2.5.1',
                                                 tag: 'agelapse-v2.5.1',

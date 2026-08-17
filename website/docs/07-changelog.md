@@ -4,6 +4,32 @@ title: Changelog
 sidebar_position: 7
 ---
 
+### v2.7.0 (August 2026)
+
+#### New Features
+- Recently Deleted
+  - Deleted photos remain in Recently Deleted for 30 days before being purged.
+  - Restore or permanently delete individual photos, selected photos, or the entire trash.
+
+#### Improvements
+- ~1.3x faster stabilization on all platforms with identical output
+- Manual stabilization edits are now saved and re-used
+  - Hand-tuned alignments from the Manual Stabilization page (horizontal/vertical offset, scale, and rotation) now survive a full re-stabilization. Previously they were discarded whenever a settings change re-ran stabilization across every photo.
+  - A saved manual edit takes precedence over the automatic alignment and is re-applied on every subsequent re-stabilization, so your adjustments stick.
+  - "Stabilize on Other Faces" is remembered too: the specific face you pick is stored per photo and automatically re-selected on every later re-stabilization, at any resolution.
+  - Changing the output resolution rescales saved manual edits proportionally instead of throwing them away. They are only recomputed from scratch when a change would invalidate them (aspect ratio, eye offsets, or project orientation).
+- New Inspection Mode setting: images-per-row control (1-4)
+  - Previously, Inspection Mode locked the grid at 2 images per row. The user can now select between 1-4.
+  - Available both in the inspection toolbar and as a synced Gallery setting
+- Maintain a shared scroll position across stabilized and raw tabs
+
+#### Bug Fixes
+- Fix re-importing a previously deleted photo being blocked by duplicate fingerprint checks.
+- Fix inspection guidelines and thumbnails being cropped or misaligned for custom (WIDTH×HEIGHT) resolutions.
+- Fix several crashes and memory leaks (video player teardown, concurrent re-stabilization, and disposed-widget callbacks).
+- Fix macOS window traffic-light buttons sitting too high until the window was focused.
+- Linux: fix the packaged app failing to start on a clean machine. Bundled libraries could not resolve each other, and the GL runtime the app requires was not declared as a package dependency.
+
 ### v2.6.0 (Apr 2026)
 
 #### New Features
